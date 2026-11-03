@@ -46,8 +46,8 @@ git push -u origin main
 ## 维护约定
 
 站点展示名称统一为 **PohinCheung**；域名和 GitHub 用户名保持小写。每次修改完成并验证后，以英文提交信息 commit 并 push。本地预览截图不入库。
-页面采用极简单栏布局、悬浮顶部导航和纯白背景；配色参考原站的深蓝灰导航与蓝色链接。文章页 /writing/ 按年份归档，分类入口 /categories/。域名后续计划使用 blog.pohincheung.com 或 .net，待确定后统一更新 site 和 Pages 设置；目前保留现有配置。
+页面使用原站完整背景封面、首页 CSS 和悬浮导航；配色与文章排版沿用原站。文章页 /writing/ 按年份归档，分类入口 /categories/。域名后续计划使用 blog.pohincheung.com 或 .net，待确定后统一更新 site 和 Pages 设置；目前保留现有配置。
 
 ## 原站迁移范围
 
-首页和悬浮导航迁自 tremendous-matter 的 HomePage 与 SiteHeader，保留原有双栏文章排版并换成干净纯色背景；内容接入本站 Markdown 集合。未迁移旧账号文章、个人经历、头像、环境配置、访问统计、IP 记录、隐藏控制、Supabase、后台和登录。内页保留轻量阅读与模拟看板。
+首页和悬浮导航迁自 tremendous-matter 的 HomePage 与 SiteHeader，保留原有双栏文章排版与完整摄影封面；内容接入本站 Markdown 集合。未迁移旧账号文章、个人经历、头像、环境配置、访问统计、IP 记录、隐藏控制、Supabase、后台和登录。文章页迁入 FluidArticleHero、FluidArticleBoard 与原站 global.css；量化页保留模拟看板。

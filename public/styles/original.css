@@ -1,0 +1,2506 @@
+/* ======= 0. CSS 鍙橀噺瀹氫箟 (浜壊/鏆楄壊妯″紡) ======= */
+:root {
+  /*
+   * 姝ｆ枃瀛椾綋鏍堬細涓?lynx-li.github.io 涓€鑷达紙鍏堝姞杞?Bootstrap 4.6.1锛屽啀鍔犺浇 Fluid main.css锛夈€?   * 鎽樿嚜 https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.css 鏍瑰彉閲?--font-family-sans-serif
+   */
+  --font-family-sans-serif:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+    "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* 鍏ㄥ椤舵爮鍗犱綅锛氫晶鏍?sticky / 鏍囬 scroll-margin 涓?Fluid 椤舵爮楂樺害瀵归綈 */
+  --sticky-top-offset: 64px;
+  /* 浜壊妯″紡鍙橀噺锛堝弬鐓?zhenglinblog.top / Hexo Fluid锛氱櫧搴?+ 娣辫摑鐏板鑸爮锛?*/
+  --bg-primary: #ffffff;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f0f2f5;
+  --text-primary: #24292f;
+  --text-secondary: #57606a;
+  --text-link: #0969da;
+  --text-link-hover: #0550ae;
+  --border-color: #d0d7de;
+  --border-light: rgba(208, 215, 222, 0.8);
+  --nav-bg: #2f4154;
+  --nav-text: #ffffff;
+  --nav-text-secondary: rgba(255, 255, 255, 0.82);
+  --nav-border: rgba(255, 255, 255, 0.14);
+  --code-bg: #f6f8fa;
+  --code-inline-bg: rgba(175, 184, 193, 0.2);
+  --table-bg: #fff;
+  --table-stripe-bg: #f6f8fa;
+  --table-header-bg: #f6f8fa;
+  --blockquote-border: #dfe2e5;
+  --blockquote-text: #6a737d;
+  --dropdown-bg: #fff;
+  --dropdown-hover-bg: #f6f8fa;
+  /* Hexo Fluid 鍒楄〃/姝ｆ枃鑹诧紙public/lynx-li.github.io/css/main.css :root锛?*/
+  --fluid-text-color: #3c4858;
+  --fluid-sec-text-color: #718096;
+  --fluid-post-text-color: #2c3e50;
+  --fluid-post-heading-color: #1a202c;
+  --fluid-link-hover-color: #30a9de;
+  --fluid-link-hover-bg-color: #f8f9fa;
+  --fluid-line-color: #eaecef;
+  /* Hexo Fluid main.css 姝ｆ枃鍖哄彉閲忥紙涓?post-content / markdown-body 瀵归綈锛?*/
+  --board-bg-color: var(--bg-secondary);
+  --post-text-color: var(--fluid-post-text-color);
+  --post-heading-color: var(--fluid-post-heading-color);
+  --post-link-color: var(--text-link);
+  --line-color: var(--fluid-line-color);
+  --inlinecode-bg-color: var(--code-inline-bg);
+  --highlight-bg-color: var(--code-bg);
+  --text-color: var(--fluid-text-color);
+  --sec-text-color: var(--fluid-sec-text-color);
+  --link-hover-color: var(--fluid-link-hover-color);
+  --link-hover-bg-color: var(--fluid-link-hover-bg-color);
+}
+
+.dark {
+  color-scheme: dark;
+  /* 鏆楄壊妯″紡鍙橀噺锛堜笌鍙傝€冪珯 Fluid 鏆楄壊 board / navbar 涓€鑷达級 */
+  --bg-primary: #252d38;
+  --bg-secondary: #2c3544;
+  --bg-tertiary: #1f3144;
+  --text-primary: #d0d0d0;
+  --text-secondary: #9aa4b2;
+  --text-link: #6cb6ff;
+  --text-link-hover: #96ccff;
+  --border-color: #3d4758;
+  --border-light: rgba(255, 255, 255, 0.08);
+  --nav-bg: #1f3144;
+  --nav-text: #d0d0d0;
+  --nav-text-secondary: rgba(208, 208, 208, 0.82);
+  --nav-border: rgba(255, 255, 255, 0.1);
+  --code-bg: #1a2332;
+  --code-inline-bg: rgba(110, 118, 129, 0.4);
+  --table-bg: #0d1117;
+  --table-stripe-bg: #161b22;
+  --table-header-bg: #161b22;
+  --blockquote-border: #30363d;
+  --blockquote-text: #8b949e;
+  --dropdown-bg: #161b22;
+  --dropdown-hover-bg: #21262d;
+  --fluid-text-color: #c4c6c9;
+  --fluid-sec-text-color: #a7a9ad;
+  --fluid-post-text-color: #c4c6c9;
+  --fluid-post-heading-color: #c4c6c9;
+  --fluid-link-hover-color: #30a9de;
+  --fluid-link-hover-bg-color: #364151;
+  --fluid-line-color: #435266;
+  --board-bg-color: var(--bg-secondary);
+  --post-text-color: var(--fluid-post-text-color);
+  --post-heading-color: var(--fluid-post-heading-color);
+  --post-link-color: var(--text-link);
+  --line-color: var(--fluid-line-color);
+  --inlinecode-bg-color: var(--code-inline-bg);
+  --highlight-bg-color: var(--code-bg);
+  --text-color: var(--fluid-text-color);
+  --sec-text-color: var(--fluid-sec-text-color);
+  --link-hover-color: var(--fluid-link-hover-color);
+  --link-hover-bg-color: var(--fluid-link-hover-bg-color);
+}
+
+/* ======= 1. 鍏ㄥ眬鍩虹閲嶇疆 (閮ㄥ垎淇敼) ======= */
+/* Fluid public/lynx-li.github.io/css/main.css html, body */
+html {
+  min-height: 100%;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-sans-serif);
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  overflow-y: visible;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Fluid main.css i.iconfont 鈥?涓庝富棰?icon 灏哄涓€鑷?*/
+i.iconfont {
+  font-size: 1em;
+  line-height: 1;
+}
+
+/* ======= 2. 瀵艰埅鏍忔牱寮忥紙褰㈢姸瀵归綈 Hexo Fluid锛歷iewport 鍏ㄥ椤舵爮 + 鍐呭眰 container锛?======= */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  max-width: none;
+  margin: 0 0 32px;
+  padding: 0;
+  align-self: start;
+  box-sizing: border-box;
+}
+
+.nav {
+  width: 100%;
+  margin: 0;
+  padding: 12px 0;
+  box-sizing: border-box;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: none;
+  border-bottom: 1px solid var(--nav-border);
+  border-radius: 0;
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.nav-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 clamp(16px, 4vw, 48px);
+  gap: 16px;
+}
+
+.nav-left a {
+  font-weight: 600;
+  font-size: 1.25em;
+  /* text-xl */
+  text-decoration: none;
+  color: var(--nav-text);
+  transition: margin-inline 0.3s ease, color 0.2s ease, opacity 0.2s ease;
+  display: inline-block;
+}
+
+.nav-left a:hover {
+  opacity: 0.92;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav-links a {
+  padding: 8px 4px;
+  /* 鍑忓皯姘村钩padding锛岃gap鏉ユ帶鍒堕棿璺?*/
+  text-decoration: none;
+  color: var(--nav-text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: var(--nav-text);
+}
+
+.nav-links a.nav-link-iconed {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-links a.nav-link-iconed .iconfont {
+  font-size: 15px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.nav-search-link .iconfont {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.nav-search-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: var(--nav-text-secondary);
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.nav-search-link:hover {
+  color: var(--nav-text);
+}
+
+/*
+ * 涓婚鍒囨崲锛氫笌椤舵爮鎼滅储鍥炬爣涓€鑷达紙Fluid / 鏋楁寮忥級鈥斺€斾粎鍥炬爣 + 瀛楄壊锛屾棤鑳跺泭搴曚笌鎻忚竟銆? */
+.theme-toggle {
+  padding: 8px 10px;
+  margin: 0;
+  text-decoration: none;
+  color: var(--nav-text-secondary);
+  font-size: 14px;
+  font-weight: 400;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.theme-toggle:hover {
+  color: var(--nav-text);
+  background: transparent;
+}
+
+.theme-toggle:focus {
+  outline: none;
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--nav-text-secondary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.theme-icon {
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+/* 绉婚櫎褰撳墠椤甸潰閾炬帴鐨勮儗鏅珮浜紝鍙繚鐣欐偓鍋滄晥鏋?*/
+/* 鐢ㄦ埛瑕佹眰锛氱偣鍑诲叾浠栨爣绛鹃〉鏃朵笉搴旇鏈夎摑鑹茶儗鏅紝鍙湁榧犳爣鎮仠鏃舵墠鏄剧ず钃濊壊 */
+
+/* ======= 3. 鍐呭瀹瑰櫒鏍峰紡 (鐢ㄤ簬鍒楄〃椤靛拰鏂囩珷椤电殑灞呬腑) ======= */
+/* 杩欓噷鐨?main 鍙寘瑁瑰垪琛ㄥ拰鏂囩珷锛屼笉鍖呰９棣栭〉鐨勫乏鍙冲垎鏍?*/
+.content-wrapper {
+  max-width: 900px;
+  /* 闄愬埗鍐呭瀹藉害 */
+  margin: 32px auto 48px;
+  /* 灞呬腑 */
+  padding: 0 16px;
+  /* 渚ц竟鐣欑櫧 */
+}
+
+/* Fluid 鏂囩珷澶栧３锛氭爡鏍肩敤 Bootstrap 4.6.1锛堜笌 public/lynx-li.github.io 涓€鑷达級锛屾澶勫彧淇濈暀 lynx main 鐨勮ˉ鍏呯被 */
+.fluid-board-outer.container-fluid.nopadding-x {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.row.nomargin-x {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.nopadding-x {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+@media (max-width: 767px) {
+  .nopadding-x-md {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.nomargin-x {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/*
+ * 鏂囩珷椤?#board锛堟棤 .fluid-board-surface锛夈€傚垪琛?棣栭〉鍗＄墖鐢?main...#board.fluid-board-surface锛岄伩鍏嶄笌瑁?#board 鍙岃建瑕嗙洊銆? */
+#board:not(.fluid-board-surface) {
+  position: relative;
+  margin-top: -2rem;
+  padding: 3rem 0;
+  background-color: var(--board-bg-color);
+  transition: background-color 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  z-index: 3;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.post-content,
+post-custom {
+  box-sizing: border-box;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+@media (max-width: 767px) {
+  .post-content,
+  post-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .post-content {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 424px) {
+  .post-content,
+  post-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .post-content {
+    overflow: hidden;
+  }
+}
+
+.post-content strong {
+  font-weight: bold;
+}
+
+.post-content > *:nth-child(2) {
+  margin-top: 0;
+}
+
+.post-content img {
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* Fluid锛氬睆涓婇殣钘?SEO 鏍囬锛屾墦鍗版椂鏄剧ず */
+@media not print {
+  #seo-header {
+    display: none;
+  }
+}
+
+/* tocbot 鐩綍锛坙ynx main.css锛?*/
+#toc {
+  visibility: hidden;
+}
+
+.toc-header {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.toc-header,
+.toc-header > i {
+  font-size: 1.25rem;
+}
+
+.toc-body {
+  max-height: 75vh;
+  overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+}
+
+.toc-body ol {
+  list-style: none;
+  padding-inline-start: 1rem;
+}
+
+.toc-body::-webkit-scrollbar {
+  display: none;
+}
+
+.tocbot-list {
+  position: relative;
+}
+
+.tocbot-list ol {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.tocbot-list a {
+  font-size: 0.95rem;
+}
+
+.tocbot-link {
+  color: var(--text-color);
+}
+
+/* 鍙充晶鐩綍锛氭偓鍋滀笉瑕佷笅鍒掔嚎锛圔ootstrap reboot / 涓婚閾炬帴鏍峰紡浼氱敾钃漸nderline锛屽緢涓戯級 */
+#toc a,
+#toc a:link,
+#toc a:visited,
+#toc a:hover,
+#toc a:active,
+#toc a:focus,
+.tocbot-link:link,
+.tocbot-link:visited,
+.tocbot-link:hover,
+.tocbot-link:active,
+.tocbot-link:focus {
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none;
+}
+
+.tocbot-active-link {
+  font-weight: bold;
+  color: var(--link-hover-color);
+}
+
+.tocbot-is-collapsed {
+  max-height: 0;
+}
+
+.tocbot-is-collapsible {
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.toc-list-item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.toc-list-item.is-active-li::before {
+  height: 1rem;
+  margin: 0.25rem 0;
+  visibility: visible;
+}
+
+.toc-list-item::before {
+  width: 0.15rem;
+  height: 0.2rem;
+  position: absolute;
+  left: 0.25rem;
+  content: "";
+  border-radius: 2px;
+  margin: 0.65rem 0;
+  background: var(--link-hover-color);
+  visibility: hidden;
+  transition: height 0.1s ease-in-out, margin 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.sidebar {
+  position: sticky;
+  top: var(--sticky-top-offset);
+  padding: 3rem 0;
+}
+
+/* ... (涓婃柟鐨?body, header, nav 绛夋牱寮忎繚鎸佷笉鍙? ... */
+
+/* 2. 纭繚 Footer 鍏峰瀹氫綅涓婁笅鏂?*/
+footer {
+  position: relative;
+  /* 馃専 鍏抽敭锛氭彁渚涘畾浣嶄笂涓嬫枃 */
+  text-align: center;
+  padding: 80px 0 24px;
+  /* 椤堕儴鐣欏嚭绌洪棿 */
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 20px;
+  /* 鍑忓皯椤堕儴杈硅窛锛岃瑙嗚涓婃洿铻嶅悎 */
+  background-color: transparent;
+  /* 閫忔槑鑳屾櫙锛屽拰涓婇潰鐨勫唴瀹瑰尯鍩熶繚鎸佷竴鑷?*/
+  z-index: 10;
+  /* 绉婚櫎椤堕儴杈规锛屾秷闄ら鑹查殧绂绘劅 */
+}
+
+/* Fluid 椤舵爮甯冨眬椤碉細椤佃剼鐤忓瘑瀵归綈 lynx main.css .footer-inner锛涘疄搴曚笌椤甸潰鍩鸿壊涓€鑷达紝閬垮厤閫忔槑椤佃剼鍙犲湪榛樿鐧?缁ф壙鑹蹭笂 */
+body.home-fluid-index footer {
+  padding: 3rem 0 1rem;
+  margin-top: 0;
+  background-color: #eee !important;
+}
+html.dark body.home-fluid-index footer,
+body.home-fluid-index.dark footer {
+  background-color: #181c27 !important;
+}
+
+/* 3. 瀹氫箟鏂扮殑 Canvas 瀹瑰櫒鏍峰紡 - 瑕嗙洊搴曢儴妯嚎鍖哄煙 */
+#dino-canvas-container {
+  position: absolute;
+  top: 0;
+  /* 绱ц创 footer 椤堕儴杈圭紭 */
+  left: 0;
+  width: 100%;
+  height: 60px;
+  /* 鍔ㄧ敾鍖哄煙楂樺害锛屽彲鏍规嵁鎮ㄧ殑闇€姹傝皟鏁?*/
+  pointer-events: none;
+  /* 馃専 鍏抽敭锛氫笉闃绘尅榧犳爣鐐瑰嚮 footer 涓殑鍏朵粬鍐呭 */
+  z-index: 1;
+  /* 纭繚瀹冨湪 footer 鐨勬枃鏈唴瀹逛箣涓?*/
+  overflow: hidden;
+}
+
+/* 鍒楄〃椤电殑鍩虹鏍峰紡 */
+.list-title {
+  font-size: 2em;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.list-description {
+  margin-bottom: 24px;
+  color: var(--text-secondary);
+}
+
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  padding: 10px 0;
+  border-bottom: none;
+}
+
+.post-list a {
+  font-size: 1.1em;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.post-list a:hover {
+  color: var(--text-link);
+  text-decoration: underline;
+}
+
+
+/* 绉诲姩绔€傞厤 */
+@media (max-width: 1024px) {
+  /* 瀵艰埅鏍忕Щ鍔ㄧ浼樺寲 */
+  .nav {
+    padding: 12px 0;
+  }
+
+  .nav-inner {
+    padding: 0 16px;
+  }
+
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-links a {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    margin: 20px auto 30px;
+  }
+
+  /* 瀵艰埅鏍忓皬灞忓箷浼樺寲 */
+  .nav {
+    padding: 10px 0;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .nav-left a {
+    font-size: 1em;
+  }
+
+  .nav-links {
+    gap: 0;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .nav-links a {
+    padding: 6px 4px;
+    font-size: 12px;
+    margin-left: 0;
+  }
+
+  .nav-links a.nav-link-iconed .iconfont {
+    display: none;
+  }
+
+  .theme-toggle {
+    padding: 6px;
+  }
+}
+
+/* ======= 5. Hexo Fluid post-content / markdown-body锛堟浛浠ｅ師 Typora 瀹瑰櫒锛?======= */
+
+.markdown-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: var(--font-family-sans-serif);
+  margin-bottom: 2rem;
+  color: var(--post-text-color);
+  word-wrap: break-word;
+}
+
+.markdown-body > h1,
+.markdown-body h2 {
+  border-bottom: 1px solid var(--line-color);
+}
+
+.markdown-body > h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  color: var(--post-heading-color);
+  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+  margin-top: 2em;
+  scroll-margin-top: var(--sticky-top-offset);
+}
+
+.markdown-body > h1::before,
+.markdown-body h2::before,
+.markdown-body h3::before,
+.markdown-body h4::before,
+.markdown-body h5::before,
+.markdown-body h6::before {
+  display: block;
+  content: "";
+  margin-top: -5rem;
+  height: 5rem;
+  width: 1px;
+  visibility: hidden;
+}
+
+.markdown-body > h1:focus,
+.markdown-body h2:focus,
+.markdown-body h3:focus,
+.markdown-body h4:focus,
+.markdown-body h5:focus,
+.markdown-body h6:focus {
+  outline: none;
+}
+
+.markdown-body > h1 {
+  font-size: 2em;
+  line-height: 1.25;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+  line-height: 1.25;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body a {
+  color: var(--post-link-color);
+}
+
+.markdown-body strong,
+.markdown-body b {
+  font-weight: bold;
+  color: inherit;
+}
+
+.post-content strong,
+.post-content b,
+article.post-content strong,
+article.post-content b {
+  font-weight: 600;
+  color: inherit;
+}
+
+/* 閿氱偣锛氭鏂囧唴涓?Fluid/tocbot 鍗忚皟 */
+#board .markdown-body a[href^="#"] {
+  color: #8590a6 !important;
+  text-decoration: none !important;
+  transition: color 0.2s;
+}
+
+#board .markdown-body a[href^="#"]:link,
+#board .markdown-body a[href^="#"]:visited,
+#board .markdown-body a[href^="#"]:active {
+  color: #8590a6 !important;
+  text-decoration: none !important;
+}
+
+#board .markdown-body a[href^="#"]:hover {
+  color: #8590a6 !important;
+}
+
+#board .markdown-body a[href^="#"].active,
+#board .markdown-body a[href^="#"].active:link,
+#board .markdown-body a[href^="#"].active:visited,
+#board .markdown-body a[href^="#"].active:hover,
+#board .markdown-body a[href^="#"].active:active {
+  color: #1890ff !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+}
+
+#board .markdown-body a[href^="http://"],
+#board .markdown-body a[href^="https://"],
+#board .markdown-body a[href^="//"],
+#board .markdown-body a[href^="/"]:not([href^="#"]) {
+  color: var(--text-link) !important;
+  text-decoration: none !important;
+  transition: color 0.2s;
+}
+
+#board .markdown-body a[href^="http://"]:link,
+#board .markdown-body a[href^="http://"]:visited,
+#board .markdown-body a[href^="https://"]:link,
+#board .markdown-body a[href^="https://"]:visited,
+#board .markdown-body a[href^="//"]:link,
+#board .markdown-body a[href^="//"]:visited,
+#board .markdown-body a[href^="/"]:not([href^="#"]):link,
+#board .markdown-body a[href^="/"]:not([href^="#"]):visited {
+  color: var(--text-link) !important;
+  text-decoration: none !important;
+}
+
+#board .markdown-body a[href^="http://"]:hover,
+#board .markdown-body a[href^="https://"]:hover,
+#board .markdown-body a[href^="//"]:hover,
+#board .markdown-body a[href^="/"]:not([href^="#"]):hover {
+  color: var(--text-link-hover) !important;
+  text-decoration: none !important;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  margin-top: 0;
+  margin-bottom: 16px;
+  padding-left: 2em;
+}
+
+.markdown-body li {
+  margin: 0.25em 0;
+}
+
+.markdown-body li > p {
+  margin-top: 16px;
+}
+
+.markdown-body blockquote {
+  margin: 0 0 16px;
+  padding: 0 1em;
+  color: var(--blockquote-text);
+  border-left: 0.25em solid var(--blockquote-border);
+}
+
+.markdown-body blockquote > :first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+  background-color: var(--table-header-bg);
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid var(--border-color);
+}
+
+.markdown-body table tr {
+  background-color: var(--table-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: var(--table-stripe-bg);
+}
+
+.markdown-body hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: var(--line-color);
+  border: 0;
+}
+
+.markdown-body :not(pre) > code {
+  padding: 0.2em 0.4em;
+  margin: 0;
+  font-size: 85%;
+  font-family: var(--font-family-monospace);
+  background-color: var(--inlinecode-bg-color);
+  border-radius: 6px;
+  tab-size: 4;
+}
+
+.markdown-body pre {
+  position: relative;
+  padding: 1.45rem 1rem;
+  overflow: auto;
+  font-size: 85% !important;
+  line-height: 1.45;
+  background-color: var(--highlight-bg-color);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-family: var(--font-family-monospace);
+}
+
+.markdown-body pre code {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: inherit;
+  display: block;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.markdown-body pre.astro-code {
+  position: relative;
+  padding: 16px;
+  overflow-x: auto;
+  overflow-y: hidden !important;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: var(--highlight-bg-color);
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-family: var(--font-family-monospace);
+}
+
+.markdown-body pre.astro-code code {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: inherit;
+  white-space: normal;
+  overflow-y: hidden !important;
+}
+
+/* 代码块行号（视觉显示，不进入复制内容） */
+.markdown-body pre.astro-code code {
+  counter-reset: line-number;
+}
+
+.markdown-body pre.astro-code code .line {
+  display: block;
+  position: relative;
+  padding-left: 2.45rem !important;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 1.45;
+  min-height: 1.45em;
+  white-space: pre;
+}
+
+.markdown-body pre.astro-code code .line::before {
+  counter-increment: line-number;
+  content: counter(line-number);
+  position: absolute;
+  left: 0;
+  width: 1.75rem !important;
+  text-align: right;
+  color: #8b949e;
+  opacity: 0.75;
+  user-select: none;
+  pointer-events: none;
+  border-right: 1px solid rgba(139, 148, 158, 0.25);
+  padding-right: 0.25rem !important;
+  box-sizing: border-box;
+}
+
+.markdown-body pre.astro-code code .line > span {
+  line-height: inherit;
+}
+
+/* Keep visual blank lines in code blocks */
+.markdown-body pre.astro-code code .line:empty::after {
+  content: " ";
+}
+
+.markdown-body pre.astro-code::-webkit-scrollbar:vertical,
+.markdown-body pre.astro-code code::-webkit-scrollbar:vertical {
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.markdown-body img {
+  max-width: 90%;
+  margin: 1.5rem auto;
+  display: block;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.code-copy {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+pre.astro-code:hover .code-copy {
+  opacity: 1;
+}
+
+.code-copy:hover {
+  background-color: var(--dropdown-hover-bg);
+  color: var(--text-link);
+}
+
+.code-collapse-wrap {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.code-collapse-wrap > pre.astro-code {
+  margin-bottom: 0;
+}
+
+pre.astro-code.code-collapsible {
+  transition: max-height 0.24s ease;
+}
+
+pre.astro-code.code-collapsible.is-collapsed {
+  overflow: hidden;
+}
+
+pre.astro-code.code-collapsible.is-collapsed::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 56px;
+  pointer-events: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--highlight-bg-color));
+}
+
+.code-toggle {
+  display: inline-flex;
+  align-self: center;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 5px 12px;
+  font-size: 12px;
+  line-height: 1.3;
+  color: var(--text-secondary);
+  background-color: color-mix(in srgb, var(--bg-tertiary) 88%, transparent);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.code-collapse-wrap:not(.is-expanded) .code-toggle {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.code-collapse-wrap.is-expanded .code-toggle {
+  position: static;
+  display: block;
+  width: fit-content;
+  margin: 8px auto 0;
+}
+
+.code-toggle:hover {
+  background-color: var(--dropdown-hover-bg);
+  color: var(--text-link);
+}
+
+/* 璇勮鍖哄煙 */
+.comment-section {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-color);
+}
+
+pre.astro-code::before {
+  content: attr(data-language);
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 8px;
+  font-size: 10px;
+  color: #6e7781;
+  text-transform: uppercase;
+  display: none;
+}
+
+/* ======= Fluid 棣栭〉锛氬叏灞忚儗鏅浘 + fixed 椤舵爮锛堢粨鏋勫弬鑰?public/lynx-li.github.io/index.html锛?======= */
+/*
+ * Lynx main.css :root --body-bg-color锛堜寒鑹?#eee / 鏆楄壊 #181c27锛夛細椤电紭涓?overscroll 涓?#board 鐧藉簳鍖哄垎銆? * Bootstrap reboot 鐨?body 鑳屾櫙涓庨儴鍒嗙幆澧冧笅 html 榛樿鐧戒細銆岀洊浣忋€嶇伆搴曪紱Fluid 椤电敤 !important 缁熶竴鍘嬩綇灞傚彔銆? */
+html:has(body.home-fluid-index):not(.dark) {
+  background-color: #eee !important;
+}
+html.dark:has(body.home-fluid-index) {
+  background-color: #181c27 !important;
+}
+body.home-fluid-index {
+  background-color: #eee !important;
+}
+html.dark body.home-fluid-index,
+body.home-fluid-index.dark {
+  background-color: #181c27 !important;
+}
+
+body.home-fluid-index header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  /* 鐩栦綇鍏ㄥ眬 header { margin: 0 0 32px }锛岄伩鍏嶉《鏍忓崰浣嶆垨鍙犵畻浜х敓棣栧睆绌洪殭 */
+  margin: 0;
+}
+
+/*
+ * 首页 = Fluid / 林正式顶栏：在首屏最上时「神展开 + 半透盖在 hero 上」；下滚后「压条高 + 实色」
+ * 横向 .nav-links gap 保持 24px 不动，只改条上下 padding 与站名字号，避免链接左右乱晃
+ */
+body.home-fluid-index header:not(.scrolled) .nav {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: rgba(47, 65, 84, 0.38);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 2px 5px 0 rgba(0, 0, 0, 0.12),
+    0 2px 10px 0 rgba(0, 0, 0, 0.1);
+  transition:
+    padding 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.5s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    backdrop-filter 0.45s ease;
+}
+
+.dark body.home-fluid-index header:not(.scrolled) .nav {
+  background: rgba(31, 49, 68, 0.45);
+}
+
+/* 下滚后：条压窄 + 实底（对位 Lynx top-nav-collapse） */
+body.home-fluid-index header.scrolled .nav {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  background: rgba(47, 65, 84, 0.94);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+  transition:
+    padding 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.5s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    backdrop-filter 0.45s ease;
+}
+
+.dark body.home-fluid-index header.scrolled .nav {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* 首页站名：顶栏在首屏时略大，滚落压缩后收一号 */
+body.home-fluid-index header:not(.scrolled) .nav-left a {
+  font-size: 1.3em;
+  transition: font-size 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, color 0.2s ease;
+}
+
+body.home-fluid-index header.scrolled .nav-left a {
+  font-size: 1.12em;
+  transition: font-size 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease, color 0.2s ease;
+}
+
+/* 小屏：仍保留「上展开 / 下压缩」的反差，略减绝对高度 */
+@media (max-width: 768px) {
+  body.home-fluid-index header:not(.scrolled) .nav {
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  body.home-fluid-index header.scrolled .nav {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  body.home-fluid-index header:not(.scrolled) .nav-left a {
+    font-size: 1.15em;
+  }
+
+  body.home-fluid-index header.scrolled .nav-left a {
+    font-size: 1em;
+  }
+}
+
+body.home-fluid-index .fluid-index-header-inner {
+  width: 100%;
+  /*
+   * 鍥炲埌椤堕儴鏃跺繀椤诲畬鏁撮湶鍑鸿儗鏅浘锛氶椤?Hero 鍥哄畾鏁村睆楂樺害銆?   */
+  height: 100svh;
+  min-height: 100svh;
+  max-height: 100svh;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@supports not (height: 100svh) {
+  body.home-fluid-index .fluid-index-header-inner {
+    height: 100vh;
+    min-height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+/*
+ * 鍕垮銆岄椤垫暣灞?Hero銆嶄娇鐢?max-height: min(..., 100vw)锛? * 绔栧睆鏃?100vw < 瑙嗗彛楂橈紝浼氭妸棣栧睆鍘嬫墎锛岄灞忎笅鏂归湶鍑哄ぇ娈电伆/鐧斤紙鐢ㄦ埛璇互涓?CSS 琚鐩栵級銆? * Lynx 鐨?max-height:100vw 浠呭簲浣滅敤鍦ㄦ绾ч《鍥?鏂囩珷 Hero锛涗互涓嬬敱 .compact / .post 鍚勮嚜濯掍綋鏌ヨ鎵挎媴銆? */
+
+/* 首页首屏：避免长标题等撑出整页横向滚动 */
+body.home-fluid-index .fluid-index-header-home {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Fluid 娆＄骇椤碉紙濡?Categories锛夛細椤跺浘杈冪煯锛屽榻?lynx-li.github.io/categories/ header-inner 60vh */
+body.home-fluid-index .fluid-index-header-inner.fluid-header-inner-compact {
+  height: 60vh;
+  max-height: 60vh;
+  min-height: 300px;
+}
+
+@media (max-width: 100vh) {
+  body.home-fluid-index .fluid-index-header-inner.fluid-header-inner-compact {
+    max-height: min(60vh, 100vw);
+  }
+}
+
+/*
+ * 文章页顶栏：上半封面区偏大、下半正文（对齐 Fluid / 林正博客，约 68vh，非 50/50；亦非整屏）。
+ * 须覆盖 body.home-fluid-index .fluid-index-header-inner 的 min-height:100svh。
+ */
+.fluid-index-header-inner.fluid-header-inner-post {
+  width: 100%;
+  height: 68vh;
+  max-height: 68vh;
+  /* 覆盖首页 header-inner 的 min-height:100svh，避免文章页「整页都是背景图」 */
+  min-height: 240px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+@media (max-width: 100vh) {
+  .fluid-index-header-inner.fluid-header-inner-post {
+    max-height: min(68vh, 100vw);
+  }
+}
+
+body.home-fluid-index .fluid-index-header-inner.fluid-header-inner-post {
+  height: 68vh;
+  max-height: 68vh;
+  min-height: 240px;
+}
+
+@media (max-width: 100vh) {
+  body.home-fluid-index .fluid-index-header-inner.fluid-header-inner-post {
+    max-height: min(68vh, 100vw);
+  }
+}
+
+/* 涓庝笂鍚岀悊锛氭枃绔?Hero 鍐呭眰涓嶅己鍒朵緷璧?body 绫?*/
+.fluid-post-page .full-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body.home-fluid-index .fluid-post-page .full-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.fluid-post-page .flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+@keyframes fluid-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+body.home-fluid-index .fluid-post-banner-text.fade-in-up {
+  animation: fluid-fade-in-up 0.55s ease-out both;
+}
+
+/* main.css .banner-text */
+body.home-fluid-index .fluid-post-banner-text.banner-text {
+  color: #fff;
+  max-width: calc(960px - 6rem);
+  width: 80%;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+/* Bootstrap 4 .h2 閲忕骇锛屼綔鏂囩珷涓绘爣棰橈紙Typed.js + 涓嬪垝绾垮厜鏍囷級 */
+body.home-fluid-index .fluid-post-banner-h2.h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+body.home-fluid-index .fluid-post-page .mt-3 {
+  margin-top: 1rem !important;
+}
+
+body.home-fluid-index .fluid-post-page .mt-1 {
+  margin-top: 0.25rem !important;
+}
+
+body.home-fluid-index .fluid-post-page .mr-2 {
+  margin-right: 0.5rem !important;
+}
+
+/* main.css .post-metas / 鏂囬 .post-meta */
+body.home-fluid-index .fluid-post-banner-text .post-meta {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: inherit;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+body.home-fluid-index .fluid-post-banner-text .post-meta .iconfont {
+  margin-right: 0.2rem;
+  font-size: 1em;
+  line-height: 1;
+}
+
+body.home-fluid-index .fluid-post-banner-text .post-meta > *:not(.hover-with-bg) {
+  margin-right: 0.2rem;
+}
+
+body.home-fluid-index .fluid-post-banner-text .typed-cursor {
+  margin: 0 0.2rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  body.home-fluid-index #fluid-post-subtitle,
+  body.home-fluid-index .fluid-post-banner-h2 .typed-cursor {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  body.home-fluid-index .fluid-post-banner-text.banner-text {
+    font-size: 0.9rem;
+  }
+
+  body.home-fluid-index #fluid-post-subtitle,
+  body.home-fluid-index .fluid-post-banner-h2 .typed-cursor {
+    font-size: 1.35rem;
+  }
+}
+
+body.home-fluid-index .fluid-article-page-main {
+  position: relative;
+  z-index: 3;
+  scroll-margin-top: calc(var(--sticky-top-offset, 64px) + 8px);
+}
+
+body.home-fluid-index .fluid-article-below-hero {
+  margin-top: -2rem;
+  position: relative;
+  z-index: 4;
+}
+
+/*
+ * 绂佹浣跨敤 background 绠€鍐欙細绠€鍐欎細鎶?background-image 缃洖鍒濆鍊硷紝鏄撹鐩?Astro 鍐呰仈鐨?background-image锛屽鑷撮《鏍忚儗鏅笉鏄剧ず銆? */
+body.home-fluid-index .fluid-banner {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+/* 棣栭〉锛歩mg + object-fit: cover锛屼笌 cover 鍚屼负鍗曚竴缂╂斁鍥犲瓙锛岄暱瀹界瓑姣斾緥鏀惧ぇ/缂╁皬锛屼粎瑁佸垏涓嶇暀鎷変几闅?*/
+body.home-fluid-index .fluid-banner.fluid-banner-photo-mode {
+  background-image: none !important;
+}
+body.home-fluid-index .fluid-banner.fluid-banner-photo-mode .fluid-banner-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  will-change: transform;
+  transform-origin: center center;
+  transition: transform 0.05s linear;
+}
+body.home-fluid-index .fluid-banner.fluid-banner-photo-mode .fluid-banner-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+body.home-fluid-index .fluid-banner.fluid-banner-photo-mode .fluid-banner-inner {
+  z-index: 1;
+}
+
+.fluid-index-header-inner.fluid-header-inner-post .fluid-banner {
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+body.home-fluid-index .fluid-banner-inner {
+  position: absolute;
+  inset: 0;
+}
+
+body.home-fluid-index .fluid-banner-mask {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  padding: clamp(4rem, 12vh, 6rem) 16px 5rem;
+}
+
+body.home-fluid-index .fluid-banner-text {
+  text-align: center;
+  max-width: min(36rem, 90vw);
+}
+
+body.home-fluid-index .fluid-banner-title {
+  margin: 0;
+  font-size: clamp(1.35rem, 3.6vw, 2rem);
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* 仅首页全屏 Hero：长英文主标题单行（子项勿用整段 max-content，避免与副标题宽度“抢行”） */
+body.home-fluid-index .fluid-index-header-home .fluid-banner-text {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: min(96vw, 72rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* 保留桌面标题大小；窄屏自然换行，避免裁掉完整标题。 */
+body.home-fluid-index .fluid-index-header-home .fluid-banner-title {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+/* 标题和动画光标遵循同一换行规则。 */
+body.home-fluid-index .fluid-index-header-home .fluid-banner-title #fluid-hero-typed,
+body.home-fluid-index .fluid-index-header-home .fluid-banner-title .typed-cursor {
+  white-space: normal;
+}
+
+/* 首页 Hero：主标题下静态开头语 */
+body.home-fluid-index .fluid-banner-subtitle {
+  margin: 0.9rem 0 0;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(0.8rem, 2.1vw, 0.95rem);
+  font-weight: 400;
+  line-height: 1.65;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Typed.js 鍏夋爣锛堝榻?Fluid .banner-text .typed-cursor锛?*/
+body.home-fluid-index .fluid-banner-title .typed-cursor {
+  margin: 0 0.15em;
+  font-weight: 400;
+}
+
+body.home-fluid-index .fluid-scroll-down {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 1.25rem;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.92);
+  cursor: pointer;
+  font-size: 1.75rem;
+  line-height: 1;
+  animation: fluid-scroll-hint 1.5s ease-in-out infinite;
+}
+
+body.home-fluid-index .fluid-scroll-down:hover {
+  color: #fff;
+}
+
+@media (max-width: 79.99vh) {
+  body.home-fluid-index .fluid-scroll-down {
+    display: none;
+  }
+}
+
+@keyframes fluid-scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-0.5rem);
+    opacity: 0.45;
+  }
+}
+
+/* ---------- Fluid 姝ｆ枃鍖猴細Home / Archives / Categories锛坙ynx-li.github.io 甯冨眬 + 閰嶈壊 + 瀛楅噸锛?---------- */
+body.home-fluid-index .fluid-index-main.fluid-board-page {
+  position: relative;
+  z-index: 3;
+  scroll-margin-top: calc(var(--sticky-top-offset, 64px) + 8px);
+  /* main 鏁村鍖哄煙鍦ㄧ獎灞忎笂鍙兘闇插嚭浜?#board 涓や晶锛涗笌 body 鍚岃壊锛岄伩鍏嶈缁ф壙/UA 鍒锋垚鐧?*/
+  background-color: #eee !important;
+  /* 閬垮厤 Bootstrap/UA 鍦?main 涓婁骇鐢熼澶栧杈硅窛锛屽湪 Hero 涓?#board 涔嬮棿鎷夊嚭鐏?鐧芥潯 */
+  margin: 0;
+  padding: 0;
+  /*
+   * 瑕嗙洊鍏跺畠鏍峰紡琛ㄤ腑璇敤鐨?`main { min-height: 100vh }`锛堝鍘?index.css 瑁?main锛夛紝
+   * 鍚﹀垯棣栭〉姝ｆ枃鍖鸿鎾戞弧涓€灞忥紝Recent Posts 涓嬫柟澶у潡绌虹櫧銆佸儚鍒楄〃琚€岀洊浣忋€嶃€?   */
+  min-height: 0 !important;
+  height: auto !important;
+}
+html.dark body.home-fluid-index .fluid-index-main.fluid-board-page,
+body.home-fluid-index.dark .fluid-index-main.fluid-board-page {
+  background-color: #181c27 !important;
+}
+
+/*
+ * Archives / Categories / Statistics：main 建立独立 BFC（flow-root），避免 #board 的负 margin 与外层 margin 折叠，
+ * 否则会出现「顶图下沿与正文一起被整体上提」、叠层失效的问题。
+ */
+body.home-fluid-index main.fluid-archives-main,
+body.home-fluid-index main.fluid-categories-main,
+body.home-fluid-index main.fluid-board-page.fluid-statistics-main {
+  display: flow-root;
+}
+
+main.fluid-board-page:not(.fluid-index-main) {
+  padding-top: 1.25rem;
+  padding-bottom: 2rem;
+}
+
+/* .container锛圔ootstrap 4.6.1 鏂偣锛?*/
+body.home-fluid-index .fluid-container,
+main.fluid-board-page .fluid-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  body.home-fluid-index .fluid-container,
+  main.fluid-board-page .fluid-container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  body.home-fluid-index .fluid-container,
+  main.fluid-board-page .fluid-container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  body.home-fluid-index .fluid-container,
+  main.fluid-board-page .fluid-container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body.home-fluid-index .fluid-container,
+  main.fluid-board-page .fluid-container {
+    max-width: 1140px;
+  }
+}
+
+@media (max-width: 767px) {
+  body.home-fluid-index .fluid-nopadding-x-md,
+  main.fluid-board-page .fluid-nopadding-x-md {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+/* #board锛團luid main.css #board锛?*/
+main.fluid-board-page #board.fluid-board-surface {
+  position: relative;
+  margin-top: 0;
+  padding: 3rem 0;
+  background-color: var(--bg-secondary);
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  z-index: 3;
+  box-shadow:
+    0 12px 15px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*
+ * 棣栭〉 #board锛氱暐鍚戜笂鍙犺繘 Hero锛屽苟鏄捐憲鍑忓皬涓婂唴杈硅窛銆? * 鍘熷厛浠呰鐩?padding-bottom锛宼op 浠嶇户鎵垮叏灞€ padding:3rem锛孯ecent Posts 涓婃柟浼氱┖涓€澶у潡锛堝儚琚鐩栧け鏁堬級銆? */
+body.home-fluid-index main.fluid-board-page #board.fluid-board-surface {
+  margin-top: 0;
+}
+
+/*
+ * Archives / Categories / Statistics：白卡片向上叠入顶图（与 lynx 次级页一致）；Statistics 同页的额外上推仍由 statistics.astro 里 JS 的 transform 叠加。
+ */
+body.home-fluid-index main.fluid-archives-main #board.fluid-board-surface,
+body.home-fluid-index main.fluid-categories-main #board.fluid-board-surface,
+body.home-fluid-index main.fluid-board-page.fluid-statistics-main #board.fluid-board-surface {
+  margin-top: -2.25rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  border-radius: 0.85rem;
+  border-top-color: rgba(208, 215, 222, 0.65);
+  z-index: 4;
+  will-change: transform;
+  box-shadow:
+    0 -8px 32px rgba(0, 0, 0, 0.06),
+    0 12px 15px 0 rgba(0, 0, 0, 0.18),
+    0 17px 50px 0 rgba(0, 0, 0, 0.12);
+}
+
+html.dark body.home-fluid-index main.fluid-archives-main #board.fluid-board-surface,
+html.dark body.home-fluid-index main.fluid-categories-main #board.fluid-board-surface,
+html.dark body.home-fluid-index main.fluid-board-page.fluid-statistics-main #board.fluid-board-surface {
+  border-top-color: rgba(61, 71, 88, 0.85);
+  box-shadow:
+    0 -8px 36px rgba(0, 0, 0, 0.35),
+    0 12px 15px 0 rgba(0, 0, 0, 0.28),
+    0 17px 50px 0 rgba(0, 0, 0, 0.22);
+}
+
+body.home-fluid-index main.fluid-board-page #board.fluid-board-surface.fluid-board-home {
+  margin-top: 0;
+  padding-top: 3rem;
+  padding-bottom: 1.75rem;
+  will-change: transform;
+}
+
+@media (max-width: 767px) {
+  body.home-fluid-index main.fluid-board-page #board.fluid-board-surface {
+    margin-top: 0;
+  }
+
+  body.home-fluid-index main.fluid-archives-main #board.fluid-board-surface,
+  body.home-fluid-index main.fluid-categories-main #board.fluid-board-surface,
+  body.home-fluid-index main.fluid-board-page.fluid-statistics-main #board.fluid-board-surface {
+    margin-top: -1.75rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+    border-radius: 0.75rem;
+  }
+
+  body.home-fluid-index main.fluid-board-page #board.fluid-board-surface.fluid-board-home {
+    padding-top: 2.25rem;
+  }
+}
+body.home-fluid-index
+  main.fluid-board-page
+  #board.fluid-board-home
+  .home-post-list
+  .index-card-mimic:last-child {
+  margin-bottom: 0;
+}
+
+body.home-fluid-index .fluid-row,
+main.fluid-board-page .fluid-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+body.home-fluid-index .fluid-col-12,
+main.fluid-board-page .fluid-col-12 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* .col-md-10.m-auto锛坅rchives / categories / 棣栭〉鍐呮爮锛?*/
+main.fluid-board-page .fluid-col-md-10 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  main.fluid-board-page .fluid-col-md-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+}
+
+main.fluid-board-page .fluid-m-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Board 鍐咃細Fluid html/body 瀛楅棿璺濅笌姝ｆ枃瀛楀彿锛坢ain.css 768-781, 1393-1398锛?*/
+main.fluid-board-page .home-feed,
+main.fluid-board-page .fluid-list-group,
+main.fluid-board-page .fluid-category-list {
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--fluid-text-color);
+}
+
+body.home-fluid-index #board.fluid-board-home .home-feed-desc {
+  margin-bottom: 1rem;
+}
+
+body.home-fluid-index .home-feed,
+main.fluid-board-page .home-feed {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* 鈥斺€?棣栭〉 Recent Posts锛歩ndex-header / index-excerpt / index-btm锛坢ain.css 1213-1271锛?鈥斺€?*/
+main.fluid-board-page .home-feed-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0 0 0.25rem;
+  color: var(--fluid-post-heading-color);
+}
+
+main.fluid-board-page .home-feed-desc {
+  margin: 0 0 1.5rem;
+  color: var(--fluid-sec-text-color);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+main.fluid-board-page .home-post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main.fluid-board-page .index-card-mimic {
+  margin-bottom: 2.5rem;
+  min-height: 0;
+}
+
+main.fluid-board-page .home-post-link {
+  text-decoration: none;
+  color: var(--fluid-text-color);
+}
+
+main.fluid-board-page .home-post-excerpt-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+main.fluid-board-page .home-post-excerpt-link:visited,
+main.fluid-board-page .home-post-excerpt-link:hover,
+main.fluid-board-page .home-post-excerpt-link:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+main.fluid-board-page .home-post-link:hover .home-post-title {
+  color: var(--fluid-link-hover-color);
+}
+
+main.fluid-board-page .home-post-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0;
+  color: inherit;
+  transition: color 0.2s ease-in-out;
+}
+
+main.fluid-board-page .home-post-excerpt {
+  margin: 0.5rem 0;
+  color: var(--fluid-sec-text-color);
+  font-size: 1rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+main.fluid-board-page .home-post-subtitle {
+  margin: 0.35rem 0 0;
+  color: var(--fluid-post-heading-color);
+  opacity: 0.82;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+main.fluid-board-page .home-post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: var(--fluid-sec-text-color);
+  margin-top: 0.25rem;
+  gap: 0.2rem 0.75rem;
+}
+
+main.fluid-board-page .home-post-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+main.fluid-board-page .home-post-meta-item .iconfont {
+  font-size: 0.9em;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+main.fluid-board-page .home-post-meta a,
+main.fluid-board-page .home-post-cat {
+  color: inherit;
+}
+
+main.fluid-board-page .home-post-cat {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0 0.25rem;
+  min-width: 0;
+}
+
+main.fluid-board-page .home-post-cat-separator {
+  color: var(--fluid-sec-text-color);
+}
+
+main.fluid-board-page .home-post-meta-link {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  color: color-mix(in srgb, var(--fluid-link-hover-color) 45%, var(--fluid-sec-text-color));
+}
+
+main.fluid-board-page .home-post-meta-link:hover {
+  color: var(--fluid-link-hover-color);
+}
+
+main.fluid-board-page .home-post-tag-link {
+  text-underline-offset: 2px;
+}
+
+main.fluid-board-page .home-post-tags {
+  color: inherit;
+  opacity: 0.95;
+}
+
+main.fluid-board-page .home-post-sep {
+  opacity: 0.7;
+}
+
+main.fluid-board-page .home-empty {
+  color: var(--fluid-sec-text-color);
+  margin-top: 1rem;
+}
+
+/* 首页文章列表分页（每页 10 篇） */
+main.fluid-board-page .home-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--fluid-line-color);
+}
+
+main.fluid-board-page .home-pagination-link {
+  display: inline-flex;
+  align-items: center;
+  min-width: 5rem;
+  justify-content: center;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-link);
+  text-decoration: none;
+  border: 1px solid var(--fluid-line-color);
+  border-radius: 999px;
+  background: var(--bg-secondary);
+  transition:
+    border-color 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+main.fluid-board-page .home-pagination-link:hover:not(.is-disabled) {
+  border-color: var(--text-link);
+  background: var(--fluid-link-hover-bg-color, var(--bg-tertiary));
+}
+
+main.fluid-board-page .home-pagination-link.is-disabled {
+  color: var(--fluid-sec-text-color);
+  cursor: not-allowed;
+  opacity: 0.55;
+  border-color: var(--fluid-line-color);
+}
+
+main.fluid-board-page .home-pagination-prev {
+  justify-content: flex-start;
+}
+
+main.fluid-board-page .home-pagination-next {
+  justify-content: flex-end;
+}
+
+main.fluid-board-page .home-pagination-status {
+  font-size: 0.9rem;
+  color: var(--fluid-sec-text-color);
+  user-select: none;
+}
+
+@media (max-width: 767px) {
+  main.fluid-board-page .home-post-title {
+    font-size: 1.25rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+/* 鈥斺€?Archives锛?list-group锛坢ain.css 1969-2001锛?鈥斺€?*/
+main.fluid-board-page .fluid-list-group a ~ .fluid-archives-year {
+  margin-top: 1rem;
+}
+
+main.fluid-board-page .fluid-archives-stat {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--fluid-post-heading-color);
+}
+
+main.fluid-board-page .fluid-list-hr {
+  margin: 1rem 0 1.25rem;
+  border: 0;
+  border-top: 1px solid var(--fluid-line-color);
+  background: initial;
+}
+
+main.fluid-board-page .fluid-archives-year {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+  color: var(--fluid-post-heading-color);
+}
+
+main.fluid-board-page .fluid-list-group-item {
+  display: flex;
+  align-items: baseline;
+  background-color: transparent;
+  border: 0;
+  padding: 0.5rem 0.75rem;
+  text-decoration: none;
+  color: var(--fluid-text-color);
+  border-radius: 0.25rem;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+main.fluid-board-page .fluid-list-group-item time {
+  flex: 0 0 6.9rem;
+  white-space: nowrap;
+  color: var(--fluid-sec-text-color);
+  font-variant-numeric: tabular-nums;
+}
+
+main.fluid-board-page .fluid-list-group-item .list-group-item-title {
+  flex: 1;
+  min-width: 0;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main.fluid-board-page .fluid-list-group-item:hover,
+main.fluid-board-page .fluid-list-group-item:focus-visible {
+  color: var(--fluid-link-hover-color);
+  background-color: var(--fluid-link-hover-bg-color);
+  outline: none;
+}
+
+@media (max-width: 575px) {
+  main.fluid-board-page .fluid-list-group-item {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  main.fluid-board-page .fluid-list-group-item time {
+    flex: 0 0 6.9rem;
+  }
+}
+
+main.fluid-board-page .fluid-archives-empty {
+  color: var(--fluid-sec-text-color);
+  margin: 0;
+}
+
+/* 鈥斺€?Categories锛欱ootstrap 4 collapse + Fluid main.css 2095-2147锛堜笌 zhenglinblog 涓€鑷达級 鈥斺€?*/
+main.fluid-board-page .category-list .collapse:not(.show) {
+  display: none;
+}
+
+main.fluid-board-page .category-list .collapse.show {
+  display: block;
+}
+
+main.fluid-board-page .category-list .collapsing {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+main.fluid-board-page .category-list .nomargin-x {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+main.fluid-board-page .category-list .w-100 {
+  width: 100% !important;
+}
+
+main.fluid-board-page .category-list .category.row,
+main.fluid-board-page .category-list .category-sub.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+main.fluid-board-page .category-list .col-10 {
+  flex: 0 0 83.333333%;
+  max-width: 83.333333%;
+}
+
+main.fluid-board-page .category-list .col-2 {
+  flex: 0 0 16.666667%;
+  max-width: 16.666667%;
+}
+
+@media (min-width: 768px) {
+  main.fluid-board-page .category-list .col-md-11 {
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+
+  main.fluid-board-page .category-list .col-md-1 {
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+
+  /* Fluid 妯℃澘涓殑 col-xm-*锛堜笌 md 鍚岃壊闃讹級 */
+  main.fluid-board-page .category-list .col-xm-11 {
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
+
+  main.fluid-board-page .category-list .col-xm-1 {
+    flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+  }
+}
+
+@media (max-width: 767px) {
+  main.fluid-board-page .category-list .col-xm-11 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+
+  main.fluid-board-page .category-list .col-xm-1 {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+}
+
+/*
+ * 鏍囬涓庣瘒鏁板悓涓€琛岋細蹇呴』鍐欏湪鎵€鏈?col-* 涔嬪悗銆? * col 鐨?flex:0 0 X% + shrink:0 浼氬湪鍐呭鐣ュ鏃舵妸 .category-count 鏁村垪 flex-wrap 鍒颁笅涓€琛岋紱
+ * 鏀圭敤銆屾爣棰樺悆鍓╀綑绌洪棿 + 绡囨暟 auto 瀹姐€嶅榻?Fluid 鐨勮瑙夋晥鏋溿€? */
+main.fluid-board-page .category-list .category.row > a.category-item-action,
+main.fluid-board-page .category-list .category-sub.row > a.category-item-action {
+  flex: 1 1 0%;
+  min-width: 0;
+  max-width: none;
+}
+
+main.fluid-board-page .category-list .category.row > .category-count,
+main.fluid-board-page .category-list .category-sub.row > .category-count {
+  flex: 0 0 auto;
+  max-width: none;
+  width: auto;
+}
+
+main.fluid-board-page .category-list .category.row > .category-collapse,
+main.fluid-board-page .category-list .category-sub.row > .category-collapse {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+main.fluid-board-page .fluid-category-page-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 0 0.25rem;
+  color: var(--fluid-post-heading-color);
+}
+
+main.fluid-board-page .fluid-category-page-desc {
+  margin: 0 0 1.5rem;
+  color: var(--fluid-sec-text-color);
+  font-size: 1rem;
+}
+
+main.fluid-board-page .fluid-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+main.fluid-board-page .fluid-category-section {
+  margin-bottom: 1rem;
+}
+
+main.fluid-board-page .fluid-category-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Fluid main.css .category:not(:last-child) 鈥斺€?鐢?.cat-section li 鎵挎媴鍒嗗尯闂磋窛 */
+main.fluid-board-page .category-list .category:not(:last-child),
+main.fluid-board-page .category-list .category-sub:not(:last-child) {
+  margin-bottom: 0;
+}
+
+/* Fluid main.css .category .category-item銆?category-subitem */
+main.fluid-board-page .category-list .category .category-item,
+main.fluid-board-page .category-list .category-sub .category-subitem {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/*
+ * 鍒嗙被鏍囬涓夌骇瀛楀彿锛氫笌 zhenglinblog / 鏋楁 categories 涓€鑷?鈥斺€? * 椤舵爮澶х被鏈€澶э紱闆嗗悎鍐呯涓€灞傛枃浠跺す娆′箣锛涘啀涓嬪眰瀛愭枃浠跺す鏇村皬銆? * 鍕垮啀鐢ㄥ崟涓€鐨?.category .category-item 瀛楀彿锛屽惁鍒欓《灞備笌宓屽绗竴灞備細绯婃垚鍚屼竴绾с€? */
+main.fluid-board-page .category-list .fluid-category-section > .category > a.category-item {
+  font-size: 1.45rem;
+  line-height: 1.35;
+}
+
+main.fluid-board-page .category-list .category-collapse .category .category-item {
+  font-size: 1.0625rem;
+  line-height: 1.4;
+}
+
+main.fluid-board-page .category-list .category-sub .category-subitem {
+  font-size: 0.9375rem;
+  line-height: 1.4;
+}
+
+main.fluid-board-page .category-list .category .category-collapse,
+main.fluid-board-page .category-list .category-sub .category-collapse {
+  padding-left: 1.25rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+main.fluid-board-page .category-list .category-post-list {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+main.fluid-board-page .category-list .category-count {
+  font-size: 0.9rem;
+  font-weight: initial;
+  min-width: 1.3em;
+  line-height: 1.3em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--fluid-sec-text-color);
+}
+
+main.fluid-board-page .category-list a.category-count {
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+main.fluid-board-page .category-list a.category-count:hover,
+main.fluid-board-page .category-list a.category-count:focus {
+  color: var(--fluid-link-hover-color);
+}
+
+main.fluid-board-page .category-list .category-count i {
+  padding-right: 0.25rem;
+}
+
+main.fluid-board-page .category-list .category-count span {
+  width: 2rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+main.fluid-board-page .category-list .category-item-action:not(.collapsed) > i {
+  transform: rotate(90deg);
+  transform-origin: center center;
+}
+
+main.fluid-board-page .category-list .category-item-action i {
+  transition: transform 0.3s ease-out;
+  display: inline-block;
+  margin-left: 0.25rem;
+  font-size: 1em;
+  line-height: 1;
+  color: var(--fluid-sec-text-color);
+}
+
+main.fluid-board-page .category-list .list-group-item {
+  display: flex;
+  background-color: transparent;
+  border: 0;
+  text-decoration: none;
+  color: var(--fluid-text-color);
+  padding: 0.75rem 0.25rem;
+  transition:
+    color 0.2s ease-in-out,
+    background-color 0.2s ease-in-out;
+}
+
+@media (max-width: 575px) {
+  main.fluid-board-page .category-list .list-group-item {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+main.fluid-board-page .category-list .list-group-item-action:focus,
+main.fluid-board-page .category-list .list-group-item-action:hover {
+  color: var(--fluid-link-hover-color);
+  background-color: var(--fluid-link-hover-bg-color);
+}
+
+main.fluid-board-page .category-list .category-item-action:focus-visible {
+  outline: 2px solid var(--fluid-link-hover-color);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+main.fluid-board-page .cat-main-link.fluid-cat-link {
+  font-size: 0.9rem;
+  color: var(--fluid-post-text-color);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+main.fluid-board-page .cat-main-link.fluid-cat-link:hover {
+  color: var(--fluid-link-hover-color);
+  text-decoration: underline;
+}
+
+main.fluid-board-page .cat-sub.fluid-cat-sub a {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  color: var(--fluid-sec-text-color);
+}
+
+main.fluid-board-page .cat-sub.fluid-cat-sub a:hover {
+  color: var(--fluid-link-hover-color);
+}
+
+main.fluid-category-index-main .category-index-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  margin: 0 0 1rem;
+  color: var(--fluid-sec-text-color);
+  font-size: 0.95rem;
+}
+
+main.fluid-category-index-main .category-index-breadcrumb a {
+  color: var(--fluid-post-text-color);
+  text-decoration: none;
+}
+
+main.fluid-category-index-main .category-index-breadcrumb a:hover,
+main.fluid-category-index-main .category-index-breadcrumb a:focus {
+  color: var(--fluid-link-hover-color);
+  text-decoration: underline;
+}
+
+main.fluid-category-index-main .category-index-head {
+  margin-bottom: 1.1rem;
+}
+
+main.fluid-category-index-main .category-index-posts {
+  margin-top: 0.4rem;
+}
+
+/* Fluid main.css .category .category-post */
+main.fluid-board-page .category-list .category-post {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+/*
+ * 鍒嗙被椤垫枃绔犳爣棰橈細涓?zhenglinblog.top/categories 涓€鑷淬€? * HTML: a.list-group-item.list-group-item-action > span.category-post
+ * 瀛楀彿/琛岄珮缁ф壙 Bootstrap 4.6 body锛?rem / 1.5锛夛紝闈炰晶鏍?.category-bar .category-post 鐨?0.9rem銆? * padding 瀵归綈 Bootstrap .list-group-item锛沵ain.css 1972-1976 浠呰鐩?border/background銆? * @575px锛歮ain.css 1985-1988 涓?Bootstrap 涓€鑷淬€? */
+/* 鍒嗙被涓嬪垪琛ㄦ枃绔狅細a.list-group-item > span.category-post锛屽榻?Bootstrap 4.6 body */
+main.fluid-board-page .category-list .category-post-list .list-group-item {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--fluid-post-text-color);
+  padding: 0.75rem 1.25rem;
+  align-items: center;
+}
+
+@media (max-width: 575px) {
+  main.fluid-board-page .category-list .category-post-list .list-group-item {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+@media (max-width: 767px) {
+  main.fluid-board-page #board.fluid-board-surface {
+    border-radius: 0.35rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  main.fluid-board-page .category-list .fluid-category-section > .category > a.category-item {
+    font-size: 1.28rem;
+  }
+
+  main.fluid-board-page .category-list .category-collapse .category .category-item {
+    font-size: 1rem;
+  }
+
+  main.fluid-board-page .category-list .category-sub .category-subitem {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== 统计 / Analytics：整页锁定暗色令牌（与 .dark 一致，不随全局昼夜切换） ========== */
+body.page-theme-lock-dark {
+  background-color: #252d38;
+  color-scheme: dark;
+}
+
+.page-theme-lock-wrap {
+  display: flow-root;
+  min-height: 100%;
+  color-scheme: dark;
+}
+
+/* overlay 首页类在亮色下会给 footer 强刷 #eee，锁定页需与暗色页脚一致 */
+body.page-theme-lock-dark.home-fluid-index footer {
+  background-color: #181c27 !important;
+  color: var(--text-secondary);
+}
+
+/* Shared typography and interaction states across the existing layouts. */
+#board .markdown-body :is(h1, h2, h3, h4, h5, h6, strong, b) {
+  font-weight: 600;
+}
+
+:is(a, button, input, textarea, summary):focus-visible {
+  outline: 2px solid var(--text-link);
+  outline-offset: 3px;
+}
+
+.typed-cursor {
+  animation: hero-cursor 1s step-end infinite;
+}
+
+@keyframes hero-cursor {
+  50% { opacity: 0; }
+}
+
+#search-input {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: var(--border-color) !important;
+}
+
+#search-input:focus {
+  border-color: var(--text-link) !important;
+  outline: 2px solid var(--text-link);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .typed-cursor { animation: none; }
+  .fluid-scroll-down { animation: none !important; }
+}

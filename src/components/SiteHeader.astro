@@ -1,7 +1,8 @@
 ---
+const {overlay=false}=Astro.props;
 const links=[['/','首页'],['/writing/','文章'],['/categories/','分类'],['/dashboard/','量化'],['/about/','关于']];
 ---
-<header class="site-header is-solid"><a class="wordmark" href="/">PohinCheung<span class="wordmark-dot">.</span></a><nav aria-label="主导航">{links.map(([url,label])=><a href={url} aria-current={Astro.url.pathname===url?'page':undefined}>{label}</a>)}</nav></header><div class="site-header-space" aria-hidden="true"></div>
+<header class:list={["site-header",!overlay && "is-solid"]}><a class="wordmark" href="/">PohinCheung<span class="wordmark-dot">.</span></a><nav aria-label="主导航">{links.map(([url,label])=><a href={url} aria-current={Astro.url.pathname===url?'page':undefined}>{label}</a>)}</nav></header>{!overlay && <div class="site-header-space" aria-hidden="true"></div>}
 <style>
   :global(html.theme-ripple::view-transition-old(root)),
   :global(html.theme-ripple::view-transition-new(root)) { animation: none; mix-blend-mode: normal; }
@@ -54,3 +55,5 @@ const links=[['/','首页'],['/writing/','文章'],['/categories/','分类'],['/
 </style>
 
 <style>header.site-header.is-solid{background:#2f4154;color:white;backdrop-filter:none;box-shadow:none;padding-block:18px}header.site-header.is-solid .wordmark-dot{color:#b7cfe7}.site-header-space{height:76px}nav [aria-current]{opacity:1;text-decoration:underline;text-underline-offset:7px}@media(max-width:760px){header.site-header.is-solid{gap:10px;padding:16px 24px}.site-header-space{height:119px}nav{justify-content:flex-start;gap:26px}}@media(max-width:370px){nav{gap:20px}}</style>
+<script>const header=document.querySelector('.site-header');const update=()=>header?.classList.toggle('is-scrolled',window.scrollY>40);window.addEventListener('scroll',update,{passive:true});update();</script>
+<style>header.site-header.is-scrolled{background:rgba(244,248,253,.95);color:#20334c;padding-block:16px}header.site-header{justify-content:space-between}header.site-header:not(.is-solid):not(.is-scrolled){background:transparent;color:white}.wordmark{color:inherit}</style>

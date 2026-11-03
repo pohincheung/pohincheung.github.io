@@ -1,0 +1,57 @@
+---
+const formatPostMetaDateLine = (date?: string) => date ?? "";
+
+/**
+ * Hexo Fluid 文章主体：container-fluid → 左空栏 + col-8 (#board + post-content + markdown-body) + 右目录
+ * 参考 public/lynx-li.github.io/2025/05/08/master/matrixanalysis/decompose/index.html
+ */
+interface Props {
+  /** 与 Fluid 一致：用于 SEO 的 h1，屏上隐藏（见 global.css #seo-header） */
+  seoTitle: string;
+  updated?: string;
+}
+
+const { seoTitle, updated } = Astro.props;
+const updatedLine = formatPostMetaDateLine(updated);
+---
+
+<div class="container-fluid nopadding-x fluid-board-outer fluid-article-below-hero">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2 fluid-side-spacer" aria-hidden="true"></div>
+    <div class="col-lg-8 nopadding-x-md fluid-board-center">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto" data-pagefind-body>
+            <h1 id="seo-header" data-pagefind-meta="title">{seoTitle}</h1>
+            {updatedLine && (
+              <p id="updated-time" class="note note-info">
+                Last updated on {updatedLine}
+              </p>
+            )}
+            <div class="markdown-body">
+              <slot name="lead" />
+              <slot />
+            </div>
+            <slot name="after" />
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="side-col d-none d-lg-block col-lg-2 fluid-toc-col">
+      <slot name="toc" />
+    </div>
+  </div>
+</div>
+
+<style>
+  #updated-time {
+    padding: 0.75rem;
+    border-left: 0.35rem solid #428bca;
+    border-radius: 0.25rem;
+    margin: 1.5rem 0;
+    color: var(--text-color);
+    transition: color 0.2s ease-in-out;
+    font-size: 0.9rem;
+    background-color: rgba(160, 197, 228, 0.25);
+  }
+</style>
