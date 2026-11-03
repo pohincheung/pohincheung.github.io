@@ -3,3 +3,18 @@
 
 /* 原站首页组件保留自己的布局；内页继续使用轻量阅读样式。 */
 .home main{width:100%;max-width:none;padding:0;min-height:70vh}.site-header a{color:inherit}.site-header nav a{color:inherit!important}.home article{padding:0}.home svg{margin:0}.home .post h3{font-size:22px}.home .post .post-excerpt{display:block}.home .post .post-meta{display:flex}.home .post{margin:0}.home .sidebar{min-width:0}
+
+main.fluid-inner { width: 100%; padding: 0 0 60px; }
+.inner-cover {
+  height: clamp(220px, 42vh, 430px);
+  background: linear-gradient(#111c2b55, #111c2b66), url('/images/cover.webp') center / cover;
+}
+.inner-board {
+  position: relative;
+  width: min(960px, calc(100% - 32px));
+  margin: -38px auto 0;
+  padding: clamp(20px, 5vw, 54px);
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 26px #20334c20;
+}
