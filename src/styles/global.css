@@ -18,3 +18,16 @@ main.fluid-inner { width: 100%; padding: 0 0 60px; }
   border-radius: 8px;
   box-shadow: 0 8px 26px #20334c20;
 }
+
+html[data-theme="dark"] { color-scheme: dark; background: #111c2b; color: #e4edf7; }
+html[data-theme="dark"] body { background: #111c2b; color: #e4edf7; }
+html[data-theme="dark"] :is(.inner-board, #board, .fluid-toc-col, .skip) { background: #192a40; color: #e4edf7; }
+html[data-theme="dark"] :is(.markdown-body, .markdown-body h2) { color: #e4edf7; border-color: #2d425b; }
+html[data-theme="dark"] :is(a, .article-toc a, summary) { color: #9bc1e5; }
+html[data-theme="dark"] .article-toc a { color: #9bc1e5 !important; }
+html[data-theme="dark"] :is(time, .tags, .muted, .eyebrow, .page-heading p, .empty, .categories span, footer, .metrics dt) { color: #a9bbd0; }
+html[data-theme="dark"] :is(footer, .metrics, th, td) { border-color: #2d425b; }
+html[data-theme="dark"] :is(.prose code, .markdown-body :not(pre) > code) { background: #263b54; color: #e4edf7; }
+html[data-theme="dark"] .notice { background: #362d20; color: #f3d79e; }
+html[data-theme="dark"] svg { color: #9bc1e5; }
+html[data-theme="dark"] svg text { fill: #a9bbd0; }
