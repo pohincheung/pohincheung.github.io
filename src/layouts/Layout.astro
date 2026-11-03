@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
 const {title='首页',description='阅读、投资与日常的个人记录。'}=Astro.props;
-const links=[['/','首页'],['/reading/','读书笔记'],['/investing/','投资感悟'],['/life/','个人日常'],['/dashboard/','量化看板'],['/about/','关于我']];
+
 ---
-<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content={description}/><link rel="canonical" href={new URL(Astro.url.pathname,Astro.site)}/><title>{title} · PohinCheung</title></head><body class:list={[Astro.url.pathname==='/' && 'home']}><a class="skip" href="#main">跳到正文</a><header><a class="brand" href="/">PohinCheung<span>阅读、思考与生活</span></a><nav aria-label="主导航">{links.map(([url,label])=><a href={url} aria-current={Astro.url.pathname===url?'page':undefined}>{label}</a>)}</nav></header><main id="main"><slot/></main><footer><span>© {new Date().getFullYear()} PohinCheung</span><span>保持好奇，留下记录。</span></footer></body></html>
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width"/><meta name="description" content={description}/><link rel="canonical" href={new URL(Astro.url.pathname,Astro.site)}/><title>{title} · PohinCheung</title></head><body class:list={[Astro.url.pathname==='/' && 'home']}><a class="skip" href="#main">跳到正文</a><SiteHeader/><main id="main"><slot/></main><footer><span>© {new Date().getFullYear()} PohinCheung</span><span>保持好奇，留下记录。</span></footer></body></html>

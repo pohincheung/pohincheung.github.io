@@ -1,0 +1,56 @@
+---
+const links=[['/','首页'],['/writing/','文章'],['/categories/','分类'],['/dashboard/','量化'],['/about/','关于']];
+---
+<header class="site-header is-solid"><a class="wordmark" href="/">PohinCheung<span class="wordmark-dot">.</span></a><nav aria-label="主导航">{links.map(([url,label])=><a href={url} aria-current={Astro.url.pathname===url?'page':undefined}>{label}</a>)}</nav></header><div class="site-header-space" aria-hidden="true"></div>
+<style>
+  :global(html.theme-ripple::view-transition-old(root)),
+  :global(html.theme-ripple::view-transition-new(root)) { animation: none; mix-blend-mode: normal; }
+  :global(html.theme-ripple::view-transition-old(root)) { z-index: 1; }
+  :global(html.theme-ripple::view-transition-new(root)) { z-index: 2; }
+  :global(html.theme-ripple *), :global(html.theme-ripple *::before), :global(html.theme-ripple *::after) { transition: none !important; }
+  header.site-header { position: fixed; inset: 0 0 auto; z-index: 1000; width: 100%; max-width: none; margin: 0; padding: 42px max(36px, calc((100vw - 1120px) / 2)); display: flex; align-items: center; gap: 58px; color: #fff; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif; line-height: normal; letter-spacing: normal; transition: padding .25s ease, background-color .25s ease, box-shadow .25s ease; }
+  header.site-header:is(.is-scrolled, .is-solid) { padding-top: 16px; padding-bottom: 16px; color: #20334c; background: rgba(244,248,253,.68); backdrop-filter: blur(22px) saturate(145%); -webkit-backdrop-filter: blur(22px) saturate(145%); box-shadow: 0 1px 0 rgba(92,120,151,.12), 0 4px 20px rgba(20,39,61,.035); }
+  header.site-header:is(.is-scrolled, .is-solid) :is(.wordmark-mark, .wordmark-dot) { color: #52749a; }
+  header.site-header:is(.is-scrolled, .is-solid) nav a::after { background: #52749a; }
+  header.site-header:is(.is-scrolled, .is-solid) .icon-button:hover { color: #284e79; background: rgba(40,78,121,.08); }
+  header.site-header:is(.is-scrolled, .is-solid) :is(a, button):focus-visible { outline-color: #52749a; }
+  :global([data-theme='dark']) header.site-header:is(.is-scrolled, .is-solid) { color: #e4edf7; background: rgba(17,28,43,.62); box-shadow: 0 1px 0 rgba(183,207,231,.12), 0 4px 20px rgba(0,0,0,.06); }
+  :global([data-theme='dark']) header.site-header:is(.is-scrolled, .is-solid) :is(.wordmark-mark, .wordmark-dot) { color: #b7cfe7; }
+  :global([data-theme='dark']) header.site-header:is(.is-scrolled, .is-solid) nav a::after { background: #b7cfe7; }
+  :global([data-theme='dark']) header.site-header:is(.is-scrolled, .is-solid) .icon-button:hover { color: #d5e6f5; background: #ffffff12; }
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    header.site-header:is(.is-scrolled, .is-solid) { background: rgba(244,248,253,.96); }
+    :global([data-theme='dark']) header.site-header:is(.is-scrolled, .is-solid) { background: rgba(17,28,43,.96); }
+  }
+  .site-header-space { height: var(--header-offset, 152px); }
+  .site-header a { color: inherit; text-decoration: none; }
+  .site-header :is(a, button):focus-visible { outline: 3px solid #b7cfe7; outline-offset: 5px; border-radius: 3px; }
+  .wordmark { display: inline-flex; align-items: center; gap: 9px; font-size: 24px; font-weight: 800; letter-spacing: -.9px; white-space: nowrap; }
+  .wordmark-mark { font-size: 29px; font-weight: 400; color: #b7cfe7; transition: transform .65s cubic-bezier(.2,.8,.2,1); }
+  .wordmark:hover .wordmark-mark { transform: rotate(100deg); }
+  .wordmark-dot { color: #b7cfe7; }
+  nav { display: flex; gap: 31px; align-items: center; }
+  nav a { font-size: 16px; font-weight: 500; opacity: .82; position: relative; padding: 8px 0; }
+  nav a::after { content: ''; position: absolute; bottom: 1px; left: 0; width: 100%; height: 2px; background: #b7cfe7; transform: scaleX(0); transform-origin: left; transition: transform .2s; }
+  nav a:hover { opacity: 1; }
+  nav a:hover::after { transform: scaleX(1); }
+  .header-tools { margin-left: auto; display: flex; gap: 11px; }
+  .icon-button { display: grid; place-items: center; width: 34px; height: 36px; padding: 0; color: inherit; background: none; border: 0; border-radius: 50%; cursor: pointer; transition: color .2s, background .2s, transform .2s; }
+  .icon-button:hover { color: #d5e6f5; background: #ffffff12; transform: translateY(-2px); }
+  .icon-button svg { width: 20px; height: 20px; }
+  .moon { display: none; }
+  :global([data-theme='dark']) .sun { display: none; }
+  :global([data-theme='dark']) .moon { display: block; }
+  @media (max-width: 1000px) { header.site-header { gap: 32px; padding: 32px; } nav { gap: 22px; } }
+  @media (max-width: 760px) {
+    header.site-header { flex-wrap: wrap; gap: 22px 16px; padding: 26px 24px; }
+    .wordmark { font-size: 23px; }
+    .header-tools { order: 1; gap: 6px; }
+    nav { order: 2; width: 100%; justify-content: space-between; gap: 16px; }
+    nav a { font-size: 15px; }
+  }
+  @media (max-width: 370px) { header.site-header { padding-inline: 18px; } .rss-link { display: none; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+</style>
+
+<style>header.site-header.is-solid{background:#2f4154;color:white;backdrop-filter:none;box-shadow:none;padding-block:18px}header.site-header.is-solid .wordmark-dot{color:#b7cfe7}.site-header-space{height:76px}nav [aria-current]{opacity:1;text-decoration:underline;text-underline-offset:7px}@media(max-width:760px){header.site-header.is-solid{gap:10px;padding:16px 24px}.site-header-space{height:119px}nav{justify-content:flex-start;gap:26px}}@media(max-width:370px){nav{gap:20px}}</style>

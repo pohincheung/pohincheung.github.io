@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {getCollection} from 'astro:content';
+const posts=await getCollection('posts');
+const categories=[['reading','读书笔记'],['investing','投资感悟'],['life','个人日常']];
+---
+<Layout title="分类"><section class="page-heading"><h1>分类</h1></section><ul class="categories">{categories.map(([id,name])=><li><a href={`/${id}/`}>{name}</a><span>{posts.filter(p=>p.data.category===id).length} 篇</span></li>)}</ul></Layout>
