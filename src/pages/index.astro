@@ -4,7 +4,14 @@ import {getCollection} from 'astro:content';
 const posts=(await getCollection('posts')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
 const categories=[['reading','读书笔记'],['investing','投资感悟'],['life','个人日常']];
 ---
-<Layout><section class="hero"><img class="hero-photo" src="/images/cover.webp" alt="" width="1920" height="1080" fetchpriority="high"/><div class="hero-shade" aria-hidden="true"></div><div class="hero-content"><p class="hero-eyebrow">阅读 · 思考 · 生活</p><h1>Welcome to<br/><span class="hero-name">PohinCheung’s Blog<span class="hero-period">.</span></span></h1><p>记录读书、投资研究与日常片刻。</p></div><a class="scroll-cue" href="#notes">浏览文章 ↓</a><svg class="hero-wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true"><path class="wave-back" d="M0 100C170 35 235 125 385 72S610 23 785 95s205-60 350-45 225 50 305-15V180H0Z"/><path class="wave-middle" d="M0 130C180 65 310 65 475 126s185 2 350-49 250-12 365 40 180-80 250-50V180H0Z"/><path class="wave-front" d="M0 145C145 80 300 80 460 133s205 61 360 8 235-46 365-14 190-38 255-55V180H0Z"/></svg></section><div id="notes" class="content-wrap"><div class="main-column"><div class="section-heading"><h2>文章与笔记</h2><a href="/writing/">全部文章 →</a></div><div class="article-list">{posts.map(post=><article class="post"><div class="post-meta"><span>{categories.find(([id])=>id===post.data.category)?.[1]}</span><span class="meta-dot">·</span><time>{post.data.date.toISOString().slice(0,10)}</time></div><h3><a href={`/posts/${post.id}/`}>{post.data.title}</a></h3><p class="post-excerpt">{post.data.description}</p><a class="read-more" href={`/posts/${post.id}/`}>阅读全文 →</a></article>)}</div></div><aside class="sidebar"><section class="topic-section"><h2 class="section-label">按分类阅读</h2><div class="topic-list">{categories.map(([id,name])=><a class="topic" href={`/${id}/`}>{name}<span>{posts.filter(p=>p.data.category===id).length}</span></a>)}</div></section><section class="author-note"><div class="author-heading"><strong>你好，我是 PohinCheung。</strong></div><p>个人简介待补充。</p><a href="/about/">关于我 →</a></section><section class="explore-section"><h2 class="section-label">量化研究</h2><p>模拟数据，非真实投资业绩。</p><a href="/dashboard/">查看量化看板 →</a></section></aside></div></Layout>
+<Layout><section class="hero"><img class="hero-photo" src="/images/cover.webp" alt="" width="1920" height="1080" fetchpriority="high"/><div class="hero-shade" aria-hidden="true"></div><div class="hero-content"><p class="hero-eyebrow">阅读 · 思考 · 生活</p><h1>Welcome to<br/><span class="hero-name">PohinCheung’s Blog<span class="hero-period">.</span></span></h1><p>记录读书、投资研究与日常片刻。</p></div><a class="scroll-cue" href="#notes">浏览文章 ↓</a><svg class="hero-wave" viewBox="0 0 1440 180" preserveAspectRatio="none" aria-hidden="true"><path class="wave-back" d="M0 100C170 35 235 125 385 72S610 23 785 95s205-60 350-45 225 50 305-15V180H0Z"/><path class="wave-middle" d="M0 130C180 65 310 65 475 126s185 2 350-49 250-12 365 40 180-80 250-50V180H0Z"/><path class="wave-front" d="M0 145C145 80 300 80 460 133s205 61 360 8 235-46 365-14 190-38 255-55V180H0Z"/></svg></section><div id="notes" class="content-wrap"><div class="main-column"><div class="section-heading"><h2>文章与笔记</h2><a href="/writing/">全部文章 →</a></div><div class="article-list">{posts.map(post=><article class="post"><div class="post-meta">
+  <time datetime={post.data.date.toISOString()}>{post.data.date.toISOString().slice(0,10)}</time>
+  <a href={`/${post.data.category}/`}>{categories.find(([id]) => id === post.data.category)?.[1]}</a>
+</div><h3><a href={`/posts/${post.id}/`}>{post.data.title}</a></h3><p class="post-excerpt">{post.data.description}</p></article>)}</div></div><aside class="sidebar"><section class="topic-section"><h2 class="section-label">按分类阅读</h2><ul class="topic-list">
+  {categories.map(([id, name]) => (
+    <li><a class="topic" href={`/${id}/`}>{name}<span aria-hidden="true">↗</span></a></li>
+  ))}
+</ul></section><section class="author-note"><div class="author-heading"><strong>你好，我是 PohinCheung。</strong></div><p>个人简介待补充。</p><a href="/about/">关于我 →</a></section><section class="explore-section"><h2 class="section-label">量化研究</h2><p>模拟数据，非真实投资业绩。</p><a href="/dashboard/">查看量化看板 →</a></section></aside></div></Layout>
 <style>
   :global(html) { --paper: #fff; --ink: #20334c; --muted: #566b82; --accent: #284e79; --heading: #243f61; --chip: #e8eff6; --line: #dce5ee; --note: #f1f5f9; --wave-back: #344f70; --wave-middle: #9bb0c6; color-scheme: light; scroll-behavior: smooth; scroll-padding-top: var(--header-offset, 152px); background: var(--paper); }
   :global(html[data-theme='dark']) { --paper: #111c2b; --ink: #e4edf7; --muted: #a9bbd0; --accent: #9bc1e5; --heading: #bed3e9; --chip: #21364f; --line: #2d425b; --note: #192a40; --wave-back: #304962; --wave-middle: #1c3048; color-scheme: dark; }
@@ -138,3 +145,19 @@ const categories=[['reading','读书笔记'],['investing','投资感悟'],['life
 
 
 <style>.post{display:block}.post .post-excerpt{display:block}.post .post-meta{display:flex}.hero-content>p:not(.hero-eyebrow){color:#e2e9f1}.explore-section p{color:var(--muted);font-size:14px}</style>
+<style>
+  .content-wrap { gap: clamp(36px, 7vw, 80px); }
+  .section-heading { margin-bottom: 0; padding-bottom: 15px; border-bottom: 1px solid var(--line); }
+  .section-heading h2 { font-size: 20px; letter-spacing: 0; }
+  .section-heading > a { font-size: 13px; white-space: nowrap; }
+  .article-list .post { padding: 24px 0; }
+  .post-meta { gap: 12px; margin-bottom: 8px; font-size: 12px; }
+  .post-meta time { font-variant-numeric: tabular-nums; }
+  .post-meta a { border-left: 1px solid var(--line); padding-left: 12px; }
+  .topic-list { display: block; list-style: none; padding: 0; margin: 12px 0 0; }
+  .topic { display: flex; justify-content: space-between; background: transparent; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 10px 0; }
+  .topic:hover { transform: none; }
+  .topic span { color: var(--muted); }
+  .author-note { background: transparent; border: 0; padding: 0; margin-top: 30px; }
+  .author-note p { margin: 8px 0; }
+</style>
