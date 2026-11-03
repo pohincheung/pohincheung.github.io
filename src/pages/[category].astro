@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PostList from '../components/PostList.astro';
+import {getCollection} from 'astro:content';
+export function getStaticPaths(){return [{params:{category:'reading'},props:{title:'读书笔记',subtitle:'把读过的内容，变成自己的理解。'}},{params:{category:'investing'},props:{title:'投资感悟',subtitle:'记录问题、判断与反思。'}},{params:{category:'life'},props:{title:'个人日常',subtitle:'短文、照片，以及值得记住的片刻。'}}];}
+const {title,subtitle}=Astro.props;
+const posts=(await getCollection('posts',p=>p.data.category===Astro.params.category)).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+---
+<Layout title={title}><section class="page-heading"><p class="eyebrow">JOURNAL / {Astro.params.category?.toUpperCase()}</p><h1>{title}</h1><p>{subtitle}</p></section><PostList posts={posts}/></Layout>

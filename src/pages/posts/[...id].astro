@@ -1,0 +1,7 @@
+---
+import {getCollection,render} from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+export async function getStaticPaths(){return (await getCollection('posts')).map(post=>({params:{id:post.id},props:{post}}));}
+const {post}=Astro.props;const {Content}=await render(post);
+---
+<Layout title={post.data.title} description={post.data.description}><article><a href={`/${post.data.category}/`}>← 返回文章列表</a><header class="article-heading"><p class="eyebrow">{post.data.example?'格式示例 · 非个人经历':'个人记录'}</p><h1>{post.data.title}</h1><time>{post.data.date.toISOString().slice(0,10)}</time><p class="tags">{post.data.tags.join(' / ')}</p></header><div class="prose"><Content/></div></article></Layout>

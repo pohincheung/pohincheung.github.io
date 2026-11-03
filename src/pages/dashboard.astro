@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Chart from '../components/Chart.astro';
+import demo from '../data/demo.json';
+import {calculate,percent} from '../lib/metrics';
+const m=calculate(demo.points);
+---
+<Layout title="量化看板"><section class="page-heading"><p class="eyebrow">RESEARCH / QUANTITATIVE</p><h1>量化看板</h1><p>把研究过程，留在可以回看的地方。</p></section><p class="notice">模拟数据，非真实投资业绩</p><h2>{demo.name}</h2><p>{demo.description}</p><dl class="metrics"><div><dt>区间收益</dt><dd>{percent(m.total)}</dd></div><div><dt>年化收益</dt><dd>{percent(m.annualized)}</dd></div><div><dt>最大回撤</dt><dd>{percent(m.maxDrawdown)}</dd></div></dl><h2>策略净值</h2><Chart dates={demo.points.map(p=>p.date)} values={demo.points.map(p=>p.nav)} label="模拟策略净值折线图"/><h2>回撤（%）</h2><Chart dates={demo.points.map(p=>p.date)} values={m.drawdowns.map(v=>v*100)} label="模拟策略回撤百分比折线图"/><details><summary>查看数据与指标口径</summary><p>区间：{demo.points[0].date} 至 {demo.points.at(-1)!.date}，共 {demo.points.length} 个观测点。月度演示观测，不代表完整日频数据；最大回撤仅基于观测点，可能低估期间回撤。</p><p>区间收益 = 末值 / 初值 − 1；年化 = (末值 / 初值)^(365.25 / 实际间隔天数) − 1；回撤 = 当前净值 / 截至当期最高净值 − 1；最大回撤取最小值。不额外模拟费用、税费或现金流，不计算夏普比率。</p><table><thead><tr><th>日期</th><th>净值</th><th>回撤</th></tr></thead><tbody>{demo.points.map((p,i)=><tr><td>{p.date}</td><td>{p.nav.toFixed(4)}</td><td>{percent(m.drawdowns[i])}</td></tr>)}</tbody></table></details></Layout>

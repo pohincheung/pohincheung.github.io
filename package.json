@@ -1,0 +1,21 @@
+{
+  "name": "pohincheung-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview --host 127.0.0.1",
+    "test": "node --experimental-strip-types --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@astrojs/check": "latest",
+    "astro": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@types/node": "^26.6.6"
+  }
+}

@@ -1,0 +1,7 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PostList from '../components/PostList.astro';
+import {getCollection} from 'astro:content';
+const posts=(await getCollection('posts')).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+---
+<Layout><section class="hero"><div class="hero-content"><p class="eyebrow">A LITTLE CORNER OF THE INTERNET</p><h1>Welcome to<br/><span>PohinCheung’s Blog.</span></h1><p class="intro">阅读 · 投资 · 日常<br/>在观察与思考之间，留下自己的记录。</p><a class="scroll-link" href="#journal">向下探索 ↓</a></div></section><div class="home-columns" id="journal"><section><div class="section-head"><h2>文章与笔记</h2><span>ARTICLES & NOTES</span></div><PostList posts={posts.slice(0,5)}/></section><aside class="home-sidebar"><p class="eyebrow">BROWSE BY TOPIC</p><div class="topic-links"><a href="/reading/">读书笔记 ↗</a><a href="/investing/">投资感悟 ↗</a><a href="/life/">个人日常 ↗</a></div><section class="author-note"><p class="eyebrow">A NOTE FROM ME</p><h2>你好，我是 PohinCheung。</h2><p>个人简介待补充。这里将慢慢积累阅读、研究与生活的记录。</p><a href="/about/">关于我 →</a></section></aside></div><section class="dashboard-entry"><div><p class="eyebrow">RESEARCH / QUANTITATIVE</p><h2>让想法，经得起数据的检验。</h2><p>量化研究的展示空间。当前仅含模拟数据，非真实投资业绩。</p></div><a href="/dashboard/">打开量化看板 ↗</a></section></Layout>

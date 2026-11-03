@@ -1,0 +1,6 @@
+---
+const {values,label,dates}=Astro.props as {values:number[];label:string;dates:string[]};
+const min=Math.min(...values),max=Math.max(...values),range=max-min||1;
+const points=values.map((v,i)=>`${50+i/(values.length-1)*700},${175-(v-min)/range*140}`).join(' ');
+---
+<svg viewBox="0 0 800 220" role="img" aria-label={label}><title>{label}</title><line x1="50" y1="175" x2="750" y2="175" stroke="#d8ddd7"/><line x1="50" y1="35" x2="750" y2="35" stroke="#d8ddd7" stroke-dasharray="4 6"/><text x="5" y="40">{max.toFixed(2)}</text><text x="5" y="180">{min.toFixed(2)}</text><polyline fill="none" stroke="currentColor" stroke-width="2.5" points={points}/><text x="50" y="210">{dates[0]}</text><text x="690" y="210">{dates.at(-1)}</text></svg>
