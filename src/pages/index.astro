@@ -30,8 +30,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.example)).sort((
           </div>
           <div class="article-list">
             {posts.map(post => (
-              <article class="home-post">
-                <a class="entry-link" href={`/posts/${post.id}/`}>
+              <a class="home-post entry-link" href={`/posts/${post.id}/`} aria-label={post.data.title}>
                   <div class="entry-meta">
                     <time datetime={post.data.date.toISOString()}>{post.data.date.toISOString().slice(0, 10)}</time>
                     <span>{categories.find(({id}) => id === post.data.category)?.title}</span>
@@ -39,8 +38,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.example)).sort((
                   <h3>{post.data.title}</h3>
                   <p class="entry-description">{post.data.description}</p>
                   <span class="entry-arrow" aria-hidden="true">↗</span>
-                </a>
-              </article>
+              </a>
             ))}
             {posts.length === 0 && <p class="empty-state">New writing is on its way.</p>}
           </div>
@@ -104,15 +102,15 @@ const posts = (await getCollection('posts', ({ data }) => !data.example)).sort((
   .all-posts span { margin-left: 6px; }
   .article-list { display: grid; gap: 12px; }
   .home-post { position: relative; min-width: 0; }
-  .entry-link { position: relative; display: block; padding: 28px 50px 28px 26px; border-radius: 18px; background: #b7cfe708; transition: background .25s ease, transform .25s ease; }
-  .entry-link:hover { background: #b7cfe711; transform: translateY(-2px); }
+  .entry-link { position: relative; display: block; width: 100%; padding: 28px 50px 28px 26px; border-radius: 18px; background: #b7cfe708; cursor: pointer; transition: background .25s ease, transform .25s ease; }
+  .entry-link:is(:hover, :focus-visible) { background: #b7cfe711; transform: translateY(-2px); }
   .entry-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 13px; font-size: 11px; color: var(--muted); }
   .entry-meta time { font-size: inherit; font-variant-numeric: tabular-nums; }
   .entry-meta > span { background: #9bc1e50b; padding: 2px 8px; border-radius: 6px; }
   .entry-link h3 { margin: 0; color: var(--ink); font-size: 20px; line-height: 1.6; font-weight: 500; overflow-wrap: anywhere; }
   .entry-description { margin: 12px 0 0; color: var(--muted); font-size: 14px; line-height: 1.9; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; overflow-wrap: anywhere; }
   .entry-arrow { position: absolute; top: 30px; right: 23px; color: var(--muted); font-size: 17px; opacity: .65; transition: transform .25s ease, opacity .25s ease; }
-  .entry-link:hover .entry-arrow { opacity: 1; transform: translate(2px, -2px); }
+  .entry-link:is(:hover, :focus-visible) .entry-arrow { opacity: 1; transform: translate(2px, -2px); }
   .empty-state { color: var(--muted); font-size: 14px; padding-block: 24px; }
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
     .content-wrap { background: #192a40; }
@@ -143,6 +141,6 @@ const posts = (await getCollection('posts', ({ data }) => !data.example)).sort((
   }
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { transition: none !important; }
-    .entry-link:hover, .entry-link:hover .entry-arrow { transform: none; }
+    .entry-link:is(:hover, :focus-visible), .entry-link:is(:hover, :focus-visible) .entry-arrow { transform: none; }
   }
 </style>

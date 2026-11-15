@@ -60,7 +60,7 @@ body.content-page .post {
   background: #b7cfe708;
   transition: background .2s ease, transform .2s ease;
 }
-body.content-page .post:hover { background: #b7cfe711; transform: translateY(-2px); }
+body.content-page .post:is(:hover, :focus-visible) { background: #b7cfe711; transform: translateY(-2px); }
 body.content-page .post time { font-size: 12px; }
 body.content-page .post h3 { color: var(--page-ink); font-size: 17px; line-height: 1.75; font-weight: 500; }
 body.content-page .post p { display: block; margin: 8px 0 0; color: var(--page-muted); font-size: 13px; line-height: 1.9; overflow-wrap: anywhere; }
@@ -117,5 +117,5 @@ body.content-page .prose p { margin: 0 0 26px; color: var(--page-muted); }
 }
 @media (prefers-reduced-motion: reduce) {
   body.content-page * { transition: none !important; }
-  body.content-page .post:hover { transform: none; }
+  body.content-page .post:is(:hover, :focus-visible) { transform: none; }
 }
