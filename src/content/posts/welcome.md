@@ -1,9 +1,9 @@
 ---
-title: "示例：如何写一篇读书笔记"
+title: "示例：如何寫一篇讀書筆記"
 date: 2026-11-03
 category: reading
-tags: [示例, 写作指南]
-description: "这是一篇格式示例，不代表站主的真实阅读经历。"
+tags: [Example, Writing Guide]
+description: "Markdown 寫作格式示例，不代表個人的閱讀經歷。"
 example: true
 ---
 这是一篇 **Markdown 格式示例**，不代表站主的经历或观点。正式写作时可删除本篇。
@@ -22,4 +22,4 @@ example: true
 
 ## 添加图片
 
-将图片放进 `public/images/`，然后使用 `![图片说明](/images/文件名.jpg)` 引用。请使用你有权公开的图片。
+将图片放进 `public/images/`，然后使用 `![圖片說明](/images/文件名.jpg)` 引用。请使用你有权公开的图片。

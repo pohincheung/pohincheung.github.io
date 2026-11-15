@@ -1,7 +1,70 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PostList from '../components/PostList.astro';
 import {getCollection} from 'astro:content';
-const posts=await getCollection('posts');
-const categories=[['reading','读书笔记'],['investing','投资感悟'],['life','个人日常']];
+import { categories } from '../data/categories';
+const posts = (await getCollection('posts', ({data}) => !data.example))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
-<Layout title="分类"><section class="page-heading"><h1>分类</h1></section><ul class="categories">{categories.map(([id,name])=><li><a href={`/${id}/`}>{name}</a><span>{posts.filter(p=>p.data.category===id).length} 篇</span></li>)}</ul></Layout>
+<Layout title="Categories" classic>
+  <section class="page-heading"><h1>Categories</h1></section>
+  <ul class="categories">
+    {categories.map(({id, title}) => {
+      const categoryPosts = posts.filter(post => post.data.category === id);
+      const count = categoryPosts.length;
+      return (
+        <li class="category-group">
+          <details id={id}>
+            <summary>
+              <strong>{title}</strong>
+              <span>{count} {count === 1 ? 'post' : 'posts'}</span>
+            </summary>
+            <div class="category-posts">
+              {count > 0 ? <PostList posts={categoryPosts} /> : <p class="category-empty">No posts yet.</p>}
+            </div>
+          </details>
+        </li>
+      );
+    })}
+  </ul>
+</Layout>
+
+<style>
+  .categories .category-group { display: block; padding: 0; }
+  .category-group details { width: 100%; margin: 0; }
+  .category-group summary {
+    display: grid;
+    grid-template-columns: 10px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 4px;
+    border-radius: 8px;
+    color: #dedfe3;
+    list-style: none;
+  }
+  .category-group summary::-webkit-details-marker { display: none; }
+  .category-group summary::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-right: 1px solid #a9afb9;
+    border-bottom: 1px solid #a9afb9;
+    transform: rotate(-45deg);
+    transition: transform .2s ease;
+  }
+  .category-group details[open] > summary::before { transform: rotate(45deg); }
+  .category-group summary:hover { background: #b7cfe708; }
+  .category-group summary:focus-visible { outline: 2px solid #d4d8df; outline-offset: 4px; }
+  .category-group summary strong { font-size: 16px; font-weight: 400; line-height: 1.6; }
+  .category-posts { padding: 0 4px 18px 28px; }
+  .category-empty { margin: 4px 0 8px; color: #a9afb9; font-size: 13px; }
+  @media (max-width: 600px) {
+    .category-group summary { gap: 10px; }
+    .category-group summary strong { font-size: 15px; }
+    .category-posts { padding-left: 24px; }
+    .category-posts :global(.post) { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .category-group summary::before { transition: none; }
+  }
+</style>

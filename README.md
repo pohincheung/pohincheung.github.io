@@ -9,7 +9,11 @@ Astro + TypeScript 静态网站。Node.js 24，使用 npm。没有账户、后�
 
 ## 写作与图片
 
-在 `src/content/posts/` 新建 Markdown，参考 welcome.md 的 frontmatter：title、date（YYYY-MM-DD）、category（reading / investing / life）、tags、description、example。正式文章使用 example: false。文件名生成文章 URL；按日期倒序展示。删除 welcome.md 即可移除示例。
+文章标题（title）和摘要（description）使用繁体中文，正文使用简体中文；正文中的章节标题随正文使用简体。公式、代码与资源链接保持原样，导航及其他界面文案保持英文。
+
+在 `src/content/posts/` 新建 Markdown，参考 welcome.md 的 frontmatter：title、date（YYYY-MM-DD）、category（reading / investing / quantitative / life）、tags、description、example。正式文章使用 example: false。文件名生成文章 URL；按日期倒序展示。example: true 的示例保留为写作模板，不显示在首页、文章归档或分类列表中。
+根目录 `arb_in_dex.md` 也直接接入文章集合，对应 `/posts/arb_in_dex/`；继续编辑这一个文件即可，不需要同步另一份 Markdown。保留文件开头的 frontmatter。
+其相对 PDF 链接 `./BA-2022-03.pdf` 同时适用于根目录 Markdown 和网站文章页。网站静态副本位于 `public/posts/arb_in_dex/BA-2022-03.pdf`；替换原 PDF 时同步更新此副本。构建后文章 HTML 与 PDF 位于同一 URL 目录，GitHub Pages 也可访问。
 图片放在 `public/images/`，文章写 `![说明](/images/文件名.jpg)`。建议压缩图片并填写有意义的说明。个人介绍编辑 `src/pages/about.astro`，首页简介编辑 `src/pages/index.astro`。
 
 ## 看板数据

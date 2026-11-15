@@ -1,0 +1,46 @@
+/* The blog uses one fixed ink-black theme. */
+html {
+  --dark-bg: #0d0f12;
+  --dark-rgb: 13, 15, 18;
+  --dark-panel: #1a1d22;
+  --dark-panel-rgb: 26, 29, 34;
+}
+
+html[data-theme='dark'],
+html[data-theme='dark'] body.site-shell { background: var(--dark-bg); }
+html[data-theme='dark'] body.site-shell .home-page { --paper: var(--dark-bg); }
+html[data-theme='dark'] body:is(.content-page, .classic-page) .inner-cover {
+  background: linear-gradient(180deg, rgba(var(--dark-rgb), .27), rgba(var(--dark-rgb), .19) 35%, rgba(var(--dark-rgb), .85) 87%, var(--dark-bg)), url('/images/cover.webp') center 47% / cover;
+}
+html[data-theme='dark'] body.site-shell .hero-shade {
+  background: linear-gradient(180deg, rgba(var(--dark-rgb), .3), rgba(var(--dark-rgb), .09) 32%, rgba(var(--dark-rgb), .26) 61%, rgba(var(--dark-rgb), .8) 88%, var(--dark-bg));
+}
+html[data-theme='dark'] body:is(.content-page, .classic-page) #main .inner-board,
+html[data-theme='dark'] body.site-shell .content-wrap {
+  background: linear-gradient(140deg, rgba(var(--dark-panel-rgb), .85), rgba(var(--dark-panel-rgb), .6) 65%, rgba(var(--dark-panel-rgb), .75));
+}
+html[data-theme='dark'] body.site-shell :is(#board, .skip) { background: var(--dark-panel); }
+html[data-theme='dark'] body.site-shell .markdown-body :not(pre) > code { background: rgba(255,255,255,.07); }
+html[data-theme='dark'] body.site-shell :is(footer, .markdown-body h1, .markdown-body h2, th, td) { border-color: #ffffff14; }
+
+/* Keep the original article components readable in the fixed dark theme. */
+html[data-theme='dark'] body:has(.fluid-post-page) {
+  --post-heading-color: #e4edf7;
+  --text-color: #d4d8df;
+  --text-link: #9bc1e5;
+  --text-link-hover: #c8def2;
+  --blockquote-text: #a9afb9;
+  --blockquote-border: #b7cfe733;
+  --border-color: #ffffff14;
+  --table-bg: transparent;
+  --table-header-bg: #ffffff06;
+  --table-stripe-bg: #ffffff03;
+  --highlight-bg-color: #13161b;
+  --line-color: #ffffff14;
+}
+html[data-theme='dark'] body.site-shell .markdown-body .katex svg { color: inherit; margin: 0; }
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  html[data-theme='dark'] body:is(.content-page, .classic-page) #main .inner-board,
+  html[data-theme='dark'] body.site-shell .content-wrap { background: var(--dark-panel); }
+}

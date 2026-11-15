@@ -1,0 +1,121 @@
+/* Reading surfaces stay scoped to landing pages; navigation lives in SiteHeader. */
+body.site-shell astro-dev-toolbar { display: none; }
+body:is(.home, .content-page, .classic-page) > footer { width: min(1060px, 100%); border: 0; padding: 0 44px 36px; font-size: 11px; opacity: .8; }
+
+/* Neutral text keeps the existing blue surfaces quiet and readable. */
+html[data-theme='dark'] body.site-shell :is(.home-page, .inner-board, .site-header) a { color: #dedfe3; }
+html[data-theme='dark'] body.site-shell :is(.home-page time, .inner-board time, .categories span, footer) { color: #a9afb9; }
+html[data-theme='dark'] body.site-shell .site-header .wordmark-dot { color: #c4c8d0; }
+body.classic-page .categories { display: block; }
+body.classic-page .categories li { gap: 20px; }
+body.classic-page .categories span { flex-shrink: 0; }
+
+/* Preserve the same photograph and dark-blue palette on each landing page. */
+body:is(.content-page, .classic-page) { --page-ink: #eceef1; --page-muted: #a9afb9; --page-accent: #d4d8df; }
+body:is(.content-page, .classic-page) main.fluid-inner { padding-bottom: 64px; }
+body:is(.content-page, .classic-page) .inner-cover {
+  position: relative;
+  height: clamp(280px, 39svh, 410px);
+  background: linear-gradient(180deg, #111c2b45, #111c2b30 35%, #111c2bd9 87%, #111c2b), url('/images/cover.webp') center 47% / cover;
+}
+body:is(.content-page, .classic-page) .inner-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  mask-image: linear-gradient(transparent 20%, #000 92%);
+  -webkit-mask-image: linear-gradient(transparent 20%, #000 92%);
+  pointer-events: none;
+}
+html[data-theme] body:is(.content-page, .classic-page) #main .inner-board {
+  width: min(1060px, calc(100% - 64px));
+  margin-top: -64px;
+  padding: 46px 48px 48px;
+  border-radius: 30px;
+  background: linear-gradient(140deg, #192a40c9, #192a4070 65%, #192a4090);
+  box-shadow: 0 16px 60px #070e1717;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  color: var(--page-ink);
+}
+body:is(.content-page, .classic-page) .page-heading { margin-bottom: 38px; }
+body:is(.content-page, .classic-page) .page-heading h1 { font-size: clamp(27px, 3vw, 34px); font-weight: 500; letter-spacing: .025em; margin: 8px 0 14px; }
+body:is(.content-page, .classic-page) .page-heading p { color: var(--page-muted); font-size: 14px; margin: 10px 0 0; }
+body:is(.content-page, .classic-page) .page-heading .eyebrow { font-size: 10px; letter-spacing: .15em; margin: 0 0 14px; }
+body.content-page .inner-board h2 { color: var(--page-ink); font-weight: 500; font-size: 20px; }
+body.content-page .inner-board a { text-decoration: none; }
+body.content-page .inner-board a:focus-visible,
+body.content-page summary:focus-visible { outline: 2px solid var(--page-accent); outline-offset: 5px; }
+body.content-page .inner-board > section + section { margin-top: 34px; }
+
+/* Writing and category archives use spacing and soft surfaces, not rules. */
+body.content-page .post-list { display: grid; gap: 12px; }
+body.content-page .post {
+  grid-template-columns: 94px minmax(0, 1fr) 16px;
+  align-items: baseline;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 18px;
+  background: #b7cfe708;
+  transition: background .2s ease, transform .2s ease;
+}
+body.content-page .post:hover { background: #b7cfe711; transform: translateY(-2px); }
+body.content-page .post time { font-size: 12px; }
+body.content-page .post h3 { color: var(--page-ink); font-size: 17px; line-height: 1.75; font-weight: 500; }
+body.content-page .post p { display: block; margin: 8px 0 0; color: var(--page-muted); font-size: 13px; line-height: 1.9; overflow-wrap: anywhere; }
+body.content-page .post > span { display: block; color: var(--page-muted); font-size: 15px; }
+body.content-page .empty { padding: 30px; border-radius: 18px; background: #b7cfe708; }
+body.content-page .empty p { margin-top: 0; }
+
+/* Research keeps its real chart lines and data; only surrounding chrome changes. */
+body.content-page .notice { border: 0; border-radius: 12px; padding: 14px 18px; margin-bottom: 30px; }
+body.content-page .metrics { border: 0; gap: 14px; padding: 0; margin: 30px 0 42px; }
+body.content-page .metrics > div { min-width: 0; border-radius: 18px; background: #b7cfe708; padding: 22px; }
+body.content-page .metrics dt { font-size: 12px; }
+body.content-page .metrics dd { font-size: clamp(22px, 2.5vw, 30px); color: var(--page-ink); font-weight: 400; }
+body.content-page .inner-board > svg { display: block; padding: 18px 10px 8px; border-radius: 18px; background: #b7cfe706; margin-bottom: 38px; }
+body.content-page .inner-board > svg line { stroke: #a9bbd02e; }
+body.content-page details { border-radius: 18px; padding: 20px 24px; background: #b7cfe708; overflow-wrap: anywhere; }
+body.content-page details p { color: var(--page-muted); font-size: 13px; line-height: 1.9; }
+body.content-page summary { width: fit-content; }
+body.content-page :is(th, td) { border: 0; padding: 12px 10px; font-size: 13px; }
+body.content-page thead, body.content-page tbody tr:nth-child(even) { background: #b7cfe708; }
+body.content-page .prose { max-width: 720px; font-size: 15px; }
+body.content-page .prose h2 { border: 0; margin: 36px 0 12px; font-size: 19px; }
+body.content-page .prose h2:first-child { margin-top: 0; }
+body.content-page .prose p { margin: 0 0 26px; color: var(--page-muted); }
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  html[data-theme='dark'] body:is(.content-page, .classic-page) #main .inner-board { background: #192a40; }
+}
+@media (max-width: 1000px) {
+  html[data-theme] body:is(.content-page, .classic-page) #main .inner-board { padding: 36px 30px; }
+}
+@media (max-width: 760px) {
+  body:is(.home, .content-page, .classic-page) > footer { padding: 0 30px 28px; gap: 12px; flex-wrap: wrap; font-size: 10px; }
+  body:is(.content-page, .classic-page) .inner-cover { height: 300px; }
+  html[data-theme] body:is(.content-page, .classic-page) #main .inner-board { width: calc(100% - 36px); margin-top: -58px; padding: 30px 24px; border-radius: 24px; }
+  body:is(.content-page, .classic-page) main.fluid-inner { padding-bottom: 44px; }
+  body:is(.content-page, .classic-page) .page-heading { margin-bottom: 28px; }
+  body.content-page .post { grid-template-columns: minmax(0, 1fr) 16px; gap: 10px; padding: 20px; }
+  body.content-page .post time { grid-column: 1 / -1; font-size: 11px; }
+  body.content-page .post h3 { font-size: 16px; }
+  body.content-page .metrics { gap: 8px; }
+  body.content-page .metrics > div { padding: 16px 12px; border-radius: 12px; }
+  body.content-page .metrics dd { font-size: 22px; }
+  body.content-page details { padding: 18px; }
+  body.content-page :is(th, td) { padding: 10px 5px; font-size: 11px; }
+}
+@media (max-width: 480px) {
+  body.content-page .metrics { grid-template-columns: 1fr; }
+  body.content-page .metrics > div { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  body.content-page .metrics dd { margin: 0; }
+}
+@media (max-width: 370px) {
+  html[data-theme] body:is(.content-page, .classic-page) #main .inner-board { padding: 26px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.content-page * { transition: none !important; }
+  body.content-page .post:hover { transform: none; }
+}
