@@ -4,10 +4,10 @@ import { glob } from 'astro/loaders';
 export const collections = {
   posts: defineCollection({
     loader: glob({
-      base: '.',
-      pattern: ['src/content/posts/**/*.md', 'arb_in_dex.md'],
-      // Keep the root writing file editable without maintaining a second copy.
-      generateId: ({ entry }) => entry.replace(/^src\/content\/posts\//, '').replace(/\.md$/, ''),
+      base: './content',
+      pattern: '{reading,investing,quantitative,life}/**/*.md',
+      // Category folders organize source files without changing published post URLs.
+      generateId: ({ entry }) => entry.replace(/^[^/]+\//, '').replace(/\.md$/, ''),
     }),
     schema: z.object({
       title: z.string(),
