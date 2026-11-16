@@ -305,3 +305,7 @@ F 已计入池手续费和价格影响，不能重复扣除；其他项则按策
 2. [作者的 Python 研究代码](https://github.com/ni3do/arb_opp_dex)。
 3. [Uniswap V2 白皮书](https://uniswap.org/whitepaper.pdf)与[Uniswap V3 白皮书](https://app.uniswap.org/whitepaper-v3.pdf)，用于后续核对模型与符号。
 4. [论文案例引用的链上交易](https://etherscan.io/tx/0x631a4941eb8d0903c1c0073784423f87019cddd7c3822c77258172bd8d1a862c)。本文中的案例数量沿用所给译注，未将其视为已经重新核算的净收益。
+
+---
+
+> 版权说明：本文为个人学习与研究笔记，所引用的论文、代码及相关资料，其版权归原作者或相应权利人所有。如有侵权或引用不当，请通过本站联系方式告知，我会及时核实并修改或删除。
