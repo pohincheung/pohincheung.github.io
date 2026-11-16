@@ -13,19 +13,11 @@ example: false
 
 <a id="chapter-1"></a>
 
-## 第一章 引言（Introduction）｜完整中文翻译与注释
+## 第一章 引言（Introduction）
 
-> **论文**：*Arbitrage Opportunities on Decentralized Exchanges*（《去中心化交易所中的套利机会》）  
-> **作者**：Simon Wachter；ETH Zürich 本科毕业论文，2022 年 8 月 21 日  
-> **范围**：第 1 章 Introduction，原文正文第 1–5 页（PDF 第 5–9 页）  
-> **翻译约定**：忠实保留原文章节、公式编号、图题与参考文献序号；新增解释统一以「译者注」标识。论文中的交易量和行业地位属于发表时的历史背景。  
-> **相关代码**：[作者的研究仓库](https://github.com/ni3do/arb_opp_dex)
+### 1.1 背景（Background）
 
-### 1 引言（Introduction）
-
-#### 1.1 背景（Background）
-
-##### 1.1.1 去中心化交易所（Decentralized Exchanges）
+#### 1.1.1 去中心化交易所（Decentralized Exchanges）
 
 去中心化交易所（Decentralized Exchanges，DEX）是去中心化金融（Decentralized Finance，DeFi）的基本组成部分之一。它们通过底层智能合约（Smart Contract）实现两种资产的交换，不依赖交易所本身或任何第三方充当做市商。
 
@@ -37,7 +29,7 @@ example: false
 
 > **译者注｜价格由谁决定？** AMM 不会自动读取 Binance 等外部交易所的价格。池内价格由储备状态决定，而套利者通过交易改变储备量，推动不同池子的价格接近。价格偏差通常需要超过手续费、Gas 和价格冲击等成本才有实际套利空间。
 
-##### 1.1.2 Uniswap V2 与恒定乘积做市商（Uniswap V2 and the Constant Product Market Maker）
+#### 1.1.2 Uniswap V2 与恒定乘积做市商（Uniswap V2 and the Constant Product Market Maker）
 
 Uniswap 协议是当时规模最大的去中心化交易所，在此前 12 个月中，其月均交易额超过 500 亿美元 [1]。2021 年 5 月交易量的大幅增长可以归因于 Uniswap V3 的推出，它为协议吸引了大量关注和流动性。
 
@@ -90,7 +82,7 @@ $$
 >
 > **译者注｜滑点和价格影响** 价格比率描述的是交易前的**边际价格**，不是任意大额订单都能成交的固定价格。订单推动储备沿双曲线移动，交易规模越大，平均成交价偏离起始边际价通常越多。
 
-##### 1.1.3 Uniswap V3
+#### 1.1.3 Uniswap V3
 
 2021 年 5 月，Uniswap 推出了 V3 协议，旨在提高资金效率（Capital Efficiency）并改善滑点（Slippage）[3]。滑点衡量一笔交易的预期价格与实际执行价格之间的差异。
 
@@ -145,7 +137,7 @@ $P_A$ 和 $P_B$ 分别是某次 Swap 的一个阶段开始和结束时池子的�
 > $$
 > 例如价格上涨时，$\Delta Y>0$（用户投入 Y），$\Delta X<0$（用户取走 X）。若以用户收到的数量为正，就要对相应的池内变化取负。后续复现模拟器时，应对照[官方 V3 白皮书](https://app.uniswap.org/whitepaper-v3.pdf)及合约实现统一价格方向、token0/token1、手续费和取整规则，不宜直接照抄这两个 `tok_out` 标记。
 
-#### 1.2 相关工作（Related Work）
+### 1.2 相关工作（Related Work）
 
 此前的工作主要关注 Uniswap V2 上的**循环套利（Cyclic Arbitrage）**。Wang 等人 [5] 提出了循环套利模型，并研究了可利用套利机会的价值。
 
@@ -177,16 +169,7 @@ Qin 等人 [7] 研究了区块链可提取价值（Blockchain Extractable Value�
 
 <a id="chapter-2"></a>
 
-## 第二章 数据收集（Data Collection）｜完整中文翻译与注释
-
-> **论文**：Simon Wachter, *Arbitrage Opportunities on Decentralized Exchanges*，ETH Zürich，2022-08-21  
-> **原文范围**：Chapter 2, Data Collection，正文第 6–7 页（PDF 第 10–11 页）。  
-> **说明**：以下“正文翻译”保留原论文信息、顺序、图注和引用编号；补充知识统一标为“译者注”。论文所涉及的交易所市场份额和手续费等级是研究期间的历史数据，不应视为最新市场数据。  
-> **上篇**：[第一章 Introduction](#chapter-1)
-
-### 2 数据收集（Data Collection）
-
-#### 正文完整翻译
+## 第二章 数据收集（Data Collection）
 
 本研究的数据收集时间范围为 **2021 年 3 月 8 日至 2022 年 1 月 13 日**。研究起始时间距离 Uniswap V3 合约的部署仅过去了几天。
 
@@ -318,14 +301,7 @@ V2/V3 Swap 模拟
 
 <a id="chapter-3"></a>
 
-## 第三章 数据处理（Processing）｜完整中文翻译与注释
-
-> 原论文：Simon Wachter, *Arbitrage Opportunities on Decentralized Exchanges*，ETH Zürich，2022。  
-> 范围：Chapter 3, 正文第 8–15 页（PDF 第 12–19 页）。  
-> 翻译原则：正文完整保留原文结构、公式编号、算法和图注；额外解释均以「译者注」区分。  
-> [第一章](#chapter-1) · [第二章](#chapter-2) · [作者代码](https://github.com/ni3do/arb_opp_dex)
-
-## 3 数据处理（Processing）
+## 第三章 数据处理（Processing）
 
 我们没有直接在以太坊节点上模拟智能合约，而是使用了自己实现的程序，该程序遵循部署在以太坊区块链上的合约所采用的相同底层公式。整个数据收集和处理过程均使用 Python 完成。代码可以在 GitHub 上获取 [8]。
 
@@ -599,14 +575,7 @@ Bellman–Ford 算法可用来寻找任意一个负权环，但为了发现最�
 
 <a id="chapter-4"></a>
 
-## 第四章 实验评估（Evaluation）｜完整中文翻译与注释
-
-> 原论文：Simon Wachter, *Arbitrage Opportunities on Decentralized Exchanges*，ETH Zürich，2022 年 8 月 21 日。  
-> 范围：Chapter 4，正文第 16–21 页（PDF 第 20–25 页）。  
-> 说明：正文翻译保留原文统计数据、章节与图注；额外知识和局限说明以「译者注」标注。图 4.1–4.6 请对照原 PDF 阅读。  
-> [第一章](#chapter-1) · [第二章](#chapter-2) · [第三章](#chapter-3)
-
-## 4 实验评估（Evaluation）
+## 第四章 实验评估（Evaluation）
 
 本研究的评估区间涵盖约 **200 万个区块**，即从 2021 年 3 月 8 日的约第 1,200 万号区块，到 2022 年 1 月 13 日的约第 1,400 万号区块。
 
@@ -664,7 +633,7 @@ $$
 
 原文提出：V3 刚上线，套利者的基础设施还不成熟，因此价差得以持续更久、规模更大。这是**可能的机制解释**，并非论文已经通过控制其他变量严格识别出的因果结论。
 
-### 4.2 套利机会与 ETH 价格（Arbirage Opportunities and ETH Price）
+### 4.2 套利机会与 ETH 价格（Arbitrage Opportunities and ETH Price）
 
 大多数套利机会都涉及 ETH 流动性池，甚至直接以 ETH 开始并以 ETH 结束。这是因为 ETH 是 DEX 生态系统中的基础货币，而且大多数流动性集中于以 ETH 为两种资产之一的池子。
 
@@ -726,16 +695,7 @@ B 的 ETH 价格更低，但其价格变化更剧烈，因此更可能出现因�
 
 <a id="chapter-5"></a>
 
-## 第五章 结论（Conclusion）｜完整中文翻译与注释
-
-> **论文**：Simon Wachter, *Arbitrage Opportunities on Decentralized Exchanges*，ETH Zürich，2022 年 8 月 21 日。  
-> **原文范围**：Chapter 5 — Conclusion，正文第 22 页（PDF 第 26 页）。  
-> **说明**：第一节忠实翻译原文全部正文；第二节为译者补充的理解与研究局限，不属于作者原文。  
-> **前文**：[第一章](#chapter-1) · [第二章](#chapter-2) · [第三章](#chapter-3) · [第四章](#chapter-4)
-
-## 5 结论（Conclusion）
-
-### 原文完整翻译
+## 第五章 结论（Conclusion）
 
 本文对循环套利机会（Cyclic Arbitrage Opportunities）进行了研究。我们分析了规模最大的几个去中心化交易所，包括 **Uniswap V2、Uniswap V3 和 SushiSwap**。
 
