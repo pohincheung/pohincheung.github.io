@@ -5,10 +5,9 @@ updated: 2026-11-16
 category: quantitative
 tags: [DeFi, DEX, Arbitrage, Uniswap, Graph Theory]
 description: "从 AMM 定价、V3 跨 Tick 模拟与负权环搜索，到最优交易规模和历史套利机会评估：系统梳理 DEX 循环套利的研究方法。"
+authors: [PohinCheung, ChatGPT]
 example: false
 ---
-
-> 本文共同作者：ChatGPT（协助整理与撰写）。
 
 去中心化交易所中的价格由各个流动性池独立决定。同一种资产在不同池中出现价差时，交易者便可能通过一连串兑换，回到起始资产并获得更多数量。但“看到价差”和“真正赚到钱”之间，还隔着手续费、价格影响、交易规模和执行竞争。
 

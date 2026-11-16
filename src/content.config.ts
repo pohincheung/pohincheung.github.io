@@ -11,6 +11,7 @@ export const collections = {
     }),
     schema: z.object({
       title: z.string(),
+      authors: z.array(z.string()).default(['PohinCheung']),
       date: z.coerce.date(),
       updated: z.coerce.date().optional(),
       category: z.enum(['reading', 'investing', 'quantitative', 'life']),

@@ -1,13 +1,14 @@
 ---
 title: "期權基礎知識：Deribit Options Course 第 1–11 章筆記"
 date: '2026-09-10'
-updated: '2026-10-20'
+updated: '2026-11-16'
 category: investing
 tags:
 - Options
 - Deribit
 - Volatility
 description: "Deribit 期權課程第 1–11 章筆記，涵蓋期權基礎、BTC 反向期權、波動率與 Greeks。"
+authors: [PohinCheung, ChatGPT]
 example: false
 ---
 
@@ -881,3 +882,7 @@ $$
 - [Section 11：Gamma](https://insights.deribit.com/options-course/sections/section-11-gamma/)
 
 > 风险提示：本文仅用于学习期权定价与风险结构，不构成投资建议。期权卖方、比率价差和临近到期头寸可能具有很高的非线性风险。
+
+> 版权说明：本文为个人学习与研究笔记，所引用的课程、图表及相关资料，其版权归原作者或相应权利人所有。如有侵权或引用不当，请通过本站联系方式告知，我会及时核实并修改或删除。
+
+> 免责声明：本文仅供学习与研究交流，不构成任何投资建议或交易推荐。文中历史数据、模拟结果及案例不代表未来收益。投资有风险，请独立判断并自行承担投资决策及交易风险。
