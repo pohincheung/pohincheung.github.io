@@ -2,8 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import { categories } from '../data/categories';
+import { comparePosts } from '../lib/posts';
 
-const posts = (await getCollection('posts', ({ data }) => !data.example)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const posts = (await getCollection('posts', ({ data }) => !data.example)).sort(comparePosts);
 ---
 
 <Layout>
@@ -32,6 +33,7 @@ const posts = (await getCollection('posts', ({ data }) => !data.example)).sort((
             {posts.map(post => (
               <a class="home-post entry-link" href={`/posts/${post.id}/`} aria-label={post.data.title}>
                   <div class="entry-meta">
+                    {post.data.pinned && <span>Pinned</span>}
                     <time datetime={post.data.date.toISOString()}>{post.data.date.toISOString().slice(0, 10)}</time>
                     <span>{categories.find(({id}) => id === post.data.category)?.title}</span>
                   </div>

@@ -14,6 +14,8 @@ export const collections = {
       authors: z.array(z.string()).default(['PohinCheung']),
       date: z.coerce.date(),
       updated: z.coerce.date().optional(),
+      pinned: z.boolean().default(false),
+      ongoing: z.boolean().default(false),
       category: z.enum(['reading', 'investing', 'quantitative', 'life']),
       tags: z.array(z.string()).default([]),
       description: z.string(),

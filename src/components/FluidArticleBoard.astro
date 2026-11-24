@@ -9,9 +9,10 @@ interface Props {
   /** 与 Fluid 一致：用于 SEO 的 h1，屏上隐藏（见 global.css #seo-header） */
   seoTitle: string;
   updated?: string;
+  ongoing?: boolean;
 }
 
-const { seoTitle, updated } = Astro.props;
+const { seoTitle, updated, ongoing = false } = Astro.props;
 const updatedLine = formatPostMetaDateLine(updated);
 ---
 
@@ -25,7 +26,8 @@ const updatedLine = formatPostMetaDateLine(updated);
             <h1 id="seo-header" data-pagefind-meta="title">{seoTitle}</h1>
             {updatedLine && (
               <p id="updated-time" class="note note-info">
-                Last updated on {updatedLine}
+                Latest update: <time datetime={updatedLine}>{updatedLine}</time>
+                {ongoing && <span> · Continuously updated</span>}
               </p>
             )}
             <div class="markdown-body">

@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import PostList from '../components/PostList.astro';
 import {getCollection} from 'astro:content';
 import { categories } from '../data/categories';
+import { comparePosts } from '../lib/posts';
 const posts = (await getCollection('posts', ({data}) => !data.example))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  .sort(comparePosts);
 ---
 <Layout title="Categories" classic>
   <section class="page-heading"><h1>Categories</h1></section>

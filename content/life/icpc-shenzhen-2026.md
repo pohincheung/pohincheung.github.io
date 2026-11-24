@@ -1,7 +1,7 @@
 ---
 title: "2026年ICPC深圳邀請賽遊記"
 date: '2026-04-13'
-updated: '2026-04-13'
+updated: '2026-11-24'
 category: life
 tags:
 - ICPC
@@ -26,10 +26,6 @@ example: false
 ![logo](/life_moments/2026ICPCSZ/logo.png)
 
 ## 4-11
-
-[最终榜单](https://board.xcpcio.com/icpc/51st/shenzhen-invitational?group=official)，遗憾铜首
-
-![scoreboard](/life_moments/2026ICPCSZ/scoreboard.png)
 
 晚上和另外一支队伍在大运中心逛了一下，因为来得太晚，基本上每家店都要排队登上半个小时甚至一个小时才能吃上，于是几人合计一起骑自行车去另外一个地方吃了广东特色的潮汕牛肉火锅
 

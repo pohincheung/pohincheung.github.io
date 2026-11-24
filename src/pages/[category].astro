@@ -3,8 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import PostList from '../components/PostList.astro';
 import {getCollection} from 'astro:content';
 import { categories } from '../data/categories';
+import { comparePosts } from '../lib/posts';
 export function getStaticPaths(){return categories.map(({id,title,subtitle})=>({params:{category:id},props:{title,subtitle}}));}
 const {title,subtitle}=Astro.props;
-const posts=(await getCollection('posts',p=>!p.data.example && p.data.category===Astro.params.category)).sort((a,b)=>b.data.date.valueOf()-a.data.date.valueOf());
+const posts=(await getCollection('posts',p=>!p.data.example && p.data.category===Astro.params.category)).sort(comparePosts);
 ---
 <Layout title={title}><section class="page-heading"><p class="eyebrow">JOURNAL / {Astro.params.category?.toUpperCase()}</p><h1>{title}</h1><p>{subtitle}</p></section><PostList posts={posts}/></Layout>
